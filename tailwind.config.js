@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -51,6 +54,17 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        black:'#0D0D0D',
+        white:'#FFFFFF',
+        onyx: '#181818',
+        'dark-gray':'#808080',
+        'medium-gray':'rgba(128, 128, 128, 0.5)',
+        'light-gray':'#C5C5C5',
+        'light-blue':'rgba(63, 100, 234, 0.43)',
+        'light-red':'rgba(233, 63, 64, 0.43)',
+        'light-yellow':'rgba(255, 184, 0, 0.43)',
+
       },
       borderRadius: {
         lg: "var(--radius)",
