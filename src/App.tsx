@@ -1,5 +1,5 @@
 import { Container } from "@/components/Container";
-import { Home } from "./sections/Home";
+import { About } from "./sections/About";
 import { Navbar } from "./components/Navbar";
 import Footer from "./sections/Footer";
 import Timeline from "./sections/Timeline";
@@ -11,7 +11,7 @@ function App() {
     <div className="bg-[#F1F4FC] w-full h-full">
       <Container className="bg-header">
         <Navbar />
-        <Home />
+        <About />
       </Container>
 
       <Container>
