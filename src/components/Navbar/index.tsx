@@ -8,7 +8,7 @@ import {
 export const Navbar = () => {
   return (
     <div className="relative h-full ">
-      <NavigationMenu className="w-full flex  justify-between h-16 bg-white/30 backdrop-blur-3xl font-inter rounded-xl border-white/30 top-5 border">
+      <NavigationMenu className="w-full flex  justify-between h-16 bg-white/30 backdrop-blur-3xl   rounded-xl border-white/30 top-5 border">
         <NavigationMenuList className="px-4 flex gap-10 ">
           <NavigationMenuItem className="cursor-pointer">
             About
@@ -17,10 +17,7 @@ export const Navbar = () => {
             Experience
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
-            Skills
-          </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer">
-            Contact
+            Tech Stack
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
             Book Interview

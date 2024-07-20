@@ -4,11 +4,11 @@ export const About = () => {
   return (
     <div className="flex h-[540px] w-full items-center justify-center mb-28">
       <div className="w-full flex flex-col gap-10">
-        <h1 className="font-inter text-4xl font-extrabold">
+        <h1 className="  text-4xl font-extrabold">
           <span className="text-dark-gray">I'm</span>{" "}
           <span>Kelman Dias dos Santos</span>
         </h1>
-        <h2 className="w-[50%] font-inter text-dark-gray font-medium  text-xl">
+        <h2 className="w-[50%]   text-dark-gray font-medium  text-xl">
           A Full-Stack Engineer who loves turning ideas into reality. Whether on
           the front-end or back-end, I focus on seamless and beautiful
           solutions. With a passion for continuous learning and creative
