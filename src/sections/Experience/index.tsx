@@ -27,20 +27,14 @@ function Experience() {
           iconStyle={{ background: "#181818" }}
           icon={<Briefcase color="#fff" />}
         >
-          <div>
-            <div className="flex gap-4 items-center">
-              <div className="flex">
-                <img width={128} src={TSCOLogo} alt="" />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="font-semibold text-lg">Full-stack Engineer</h3>
-                <h4 className="text-sm font-medium">TSCO - Luanda, AO</h4>
-              </div>
+          <div className="flex gap-4 items-center">
+            <div className="flex">
+              <img width={128} src={TSCOLogo} alt="" />
             </div>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
+            <div className="flex flex-col">
+              <h3 className="font-semibold text-lg">Full-stack Developer</h3>
+              <h4 className="text-sm font-light">TSCO - Luanda, AO</h4>
+            </div>
           </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -49,22 +43,16 @@ function Experience() {
           iconStyle={{ background: "#181818" }}
           icon={<Briefcase color="#fff" />}
         >
-          <div>
-            <div className="flex gap-4 items-center">
-              <div>
-                <img className="" width={56} src={HorizonLogo} alt="" />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="font-semibold text-lg">Full-stack Engineer</h3>
-                <h4 className="text-sm font-medium">
-                  Horizon - Sheridan, WY, USA
-                </h4>
-              </div>
+          <div className="flex gap-4 items-center">
+            <div>
+              <img className="" width={56} src={HorizonLogo} alt="" />
             </div>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
+            <div className="flex flex-col">
+              <h3 className="font-semibold text-lg">Full-stack Developer</h3>
+              <h4 className="text-sm font-light">
+                Horizon - Sheridan, WY, USA
+              </h4>
+            </div>
           </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -73,20 +61,14 @@ function Experience() {
           iconStyle={{ background: "#181818", color: "#fff" }}
           icon={<Briefcase color="#fff" />}
         >
-          <div>
-            <div className="flex gap-4 items-center">
-              <div className="flex">
-                <img width={56} src={CBSLogo} alt="" />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="font-semibold text-lg">Full-stack Engineer</h3>
-                <h4 className="text-sm font-medium">CBS - Luanda, AO</h4>
-              </div>
+          <div className="flex gap-4 items-center">
+            <div className="flex">
+              <img width={56} src={CBSLogo} alt="" />
             </div>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
+            <div className="flex flex-col">
+              <h3 className="font-semibold text-lg">Software Developer and Manager</h3>
+              <h4 className="text-sm font-light">CBS - Luanda, AO</h4>
+            </div>
           </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -95,20 +77,14 @@ function Experience() {
           iconStyle={{ background: "#181818", color: "#fff" }}
           icon={<Briefcase color="#fff" />}
         >
-          <div>
-            <div className="flex gap-4 items-center">
-              <div className="flex">
-                <img width={56} src={HestiaLogo} alt="" />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="font-semibold text-lg">Full-stack Engineer</h3>
-                <h4 className="text-sm font-medium">Hestia - Luanda, AO</h4>
-              </div>
+          <div className="flex gap-4 items-center">
+            <div className="flex">
+              <img width={56} src={HestiaLogo} alt="" />
             </div>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
+            <div className="flex flex-col">
+              <h3 className="font-semibold text-lg">Full-stack Developer</h3>
+              <h4 className="text-sm font-light">Hestia - Luanda, AO</h4>
+            </div>
           </div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -117,20 +93,15 @@ function Experience() {
           iconStyle={{ background: "#181818" }}
           icon={<GraduationCap color="#fff" />}
         >
-          <div>
-            <div className="flex gap-4 items-center">
-              <div className="flex">
-                <img width={56} src={ISPTECLogo} alt="" />
-              </div>
-              <div className="flex flex-col">
-                <h3 className="font-semibold text-lg">Full-stack Engineer</h3>
-                <h4 className="text-sm font-medium">ISPTEC - Luanda, AO</h4>
-              </div>
+          <div className="flex gap-4 items-center">
+            <div className="flex">
+              <img width={56} src={ISPTECLogo} alt="" />
             </div>
-            <p>
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
-            </p>
+            <div className="flex flex-col">
+              <h3 className="font-semibold text-lg">Bachelor of Science </h3>
+              <h4 className="text-sm font-medium"> Computer Engineering</h4>
+              <h4 className="text-sm font-light">ISPTEC - Luanda, AO</h4>
+            </div>
           </div>
         </VerticalTimelineElement>
       </VerticalTimeline>

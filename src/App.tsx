@@ -3,7 +3,6 @@ import { About } from "./sections/About";
 import { Navbar } from "./components/Navbar";
 import Footer from "./sections/Footer";
 import Experience from "./sections/Experience";
-import BookInterview from "./sections/BookInterview";
 import GetInTouch from "./sections/GetInTouch";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
 
       <Container>
         <Experience />
-        <BookInterview />
       </Container>
       <Container className="bg-footer">
         <GetInTouch />

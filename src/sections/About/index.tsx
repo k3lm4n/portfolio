@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { PopupButton } from "react-calendly";
 
 export const About = () => {
   return (
@@ -9,8 +10,8 @@ export const About = () => {
           <span>Kelman Dias dos Santos</span>
         </h1>
         <h2 className="w-[50%]   text-dark-gray font-medium  text-xl">
-          A Full-Stack Engineer who loves turning ideas into reality. Whether on
-          the front-end or back-end, I focus on seamless and beautiful
+          A Full-stack Developer who loves turning ideas into reality. Whether
+          on the front-end or back-end, I focus on seamless and beautiful
           solutions. With a passion for continuous learning and creative
           problem-solving, I strive to make a meaningful impact through
           technology.
@@ -24,7 +25,11 @@ export const About = () => {
             size={"lg"}
             className="bg-gray-200 h-full"
           >
-            Get in touch
+            <PopupButton
+              url="https://calendly.com/kelmandossantos/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+              rootElement={document.getElementById("root") as HTMLElement}
+              text="Get in touch"
+            />
           </Button>
         </div>
       </div>

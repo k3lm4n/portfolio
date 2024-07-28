@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SendHorizontal } from "lucide-react";
+import { PopupButton } from "react-calendly";
 
 function GetInTouch() {
   return (
@@ -17,7 +18,12 @@ function GetInTouch() {
           size={"icon"}
           className="h-16 w-56 rounded-lg flex gap-4 text-xl"
         >
-          <SendHorizontal /> Get in touch
+          <SendHorizontal /> 
+          <PopupButton
+          url="https://calendly.com/kelmandossantos/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+          rootElement={document.getElementById("root") as HTMLElement}
+          text="Get in touch"
+        />
         </Button>
       </div>
     </div>
