@@ -24,18 +24,39 @@ export const Navbar = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
         <NavigationMenuList className="flex gap-6 px-5">
-          <NavigationMenuItem className="cursor-pointer">
+          <NavigationMenuItem
+            className="cursor-pointer"
+            onClick={() => window.open("https://github.com/k3lm4n", "_blank")}
+          >
             <img src={GitHubSVG} alt="GitHub" className="fill-dark-gray/25" />
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer">
+          <NavigationMenuItem
+            className="cursor-pointer"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/kelman-dias-dos-santos-812693185/",
+                "_blank"
+              )
+            }
+          >
             <img src={LinkedInSVG} alt="LinkedIn" />
           </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer">
+          <NavigationMenuItem
+            className="cursor-pointer"
+            onClick={() =>
+              window.open(
+                "https://discord.com/users/826107786643243038",
+                "_blank"
+              )
+            }
+          >
             <img src={DiscordSVG} alt="Discord" />
           </NavigationMenuItem>
           <span className="h-6 border border-dark-gray/25" />
           <NavigationMenuItem className="cursor-pointer">
-            <img src={SunSVG} alt="Sun" />
+            <a href="">
+              <img src={SunSVG} alt="Sun" />
+            </a>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
