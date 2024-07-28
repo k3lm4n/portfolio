@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { InlineWidget, PopupButton, PopupWidget } from "react-calendly";
+import { PopupButton } from "react-calendly";
 
 function BookInterview() {
   return (
