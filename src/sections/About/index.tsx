@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const About = () => {
   return (
-    <div className="flex h-[540px] w-full items-center justify-center mb-28">
+    <div className="flex h-[540px] w-full items-center justify-center">
       <div className="w-full flex flex-col gap-10">
         <h1 className="  text-4xl font-extrabold">
           <span className="text-dark-gray">I'm</span>{" "}
