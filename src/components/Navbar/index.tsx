@@ -5,7 +5,7 @@ import {
   GetInTouchSVG,
   GitHubSVG,
   LinkedInSVG,
-  SunSVG,
+  // SunSVG,
   TechStackSVG,
 } from "@/assets";
 import {
