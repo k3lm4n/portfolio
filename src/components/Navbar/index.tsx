@@ -1,26 +1,90 @@
-import { DiscordSVG, GitHubSVG, LinkedInSVG, SunSVG } from "@/assets";
+import {
+  AboutSVG,
+  DiscordSVG,
+  ExperienceSVG,
+  GetInTouchSVG,
+  GitHubSVG,
+  LinkedInSVG,
+  SunSVG,
+  TechStackSVG,
+} from "@/assets";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "../ui/navigation-menu";
 
+import useTablet from "@/hooks/useTablet";
+
 export const Navbar = () => {
-  return (
-    <div className="relative h-full ">
-      <NavigationMenu className="w-full flex  justify-between h-16 bg-white/30 backdrop-blur-3xl   rounded-xl border-white/30 top-5 border">
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    // first prevent the default behavior
+    e.preventDefault();
+    const { href } = e.currentTarget;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const isTablet = useTablet();
+  return isTablet ? (
+    <>
+      <div className="mx-auto flex items-center justify-center w-full h-full z-20">
+        <NavigationMenu className="fixed w-[85%] flex  h-16 bg-onyx/25 backdrop-blur-3xl   rounded-xl border-white/30 bottom-5 border">
+          <NavigationMenuList className=" flex justify-between px-9 gap-10">
+            <NavigationMenuItem className="cursor-pointer ">
+              <a href="#about" onClick={() => handleScroll}>
+                <img src={AboutSVG} alt="" />
+              </a>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem className="cursor-pointer  ">
+              <a href="#experiences" onClick={() => handleScroll}>
+                <img src={ExperienceSVG} alt="" />
+              </a>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem className="cursor-pointer  ">
+              <a href="#techStack" onClick={() => handleScroll}>
+                <img src={TechStackSVG} alt="" />
+              </a>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem className="cursor-pointer  ">
+              <a href="#getInTouch" onClick={() => handleScroll}>
+                <img src={GetInTouchSVG} alt="" />
+              </a>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+    </>
+  ) : (
+    <div className="mx-auto flex items-center justify-center w-[90%] h-full">
+      <NavigationMenu className="fixed w-[80%] flex  justify-between h-16 bg-white/30 backdrop-blur-3xl   rounded-xl border-white/30 top-5 border">
         <NavigationMenuList className="px-4 flex gap-10 ">
           <NavigationMenuItem className="cursor-pointer">
-            About
+            <a href="#about" onClick={() => handleScroll}>
+              About
+            </a>
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
-            Experience
+            <a href="#experiences" onClick={() => handleScroll}>
+              Experiences
+            </a>
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
-            Tech Stack
+            <a href="#techStack" onClick={() => handleScroll}>
+              Tech Stack
+            </a>
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
-            Book Interview
+            <a href="#getInTouch" onClick={() => handleScroll}>
+              Get in Touch
+            </a>
           </NavigationMenuItem>
         </NavigationMenuList>
         <NavigationMenuList className="flex gap-6 px-5">
@@ -52,12 +116,12 @@ export const Navbar = () => {
           >
             <img src={DiscordSVG} alt="Discord" />
           </NavigationMenuItem>
-          <span className="h-6 border border-dark-gray/25" />
+          {/* <span className="h-6 border border-dark-gray/25" />
           <NavigationMenuItem className="cursor-pointer">
             <a href="">
               <img src={SunSVG} alt="Sun" />
             </a>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

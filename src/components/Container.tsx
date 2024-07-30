@@ -11,7 +11,7 @@ export const Container = ({
 }: PropsWithChildren & ContainerProps) => {
   return (
     <div className={twJoin("w-full h-full ", className)}>
-      <div className="container mx-auto px-8">{children}</div>
+      <div className="md:container md:mx-auto md:px-8">{children}</div>
     </div>
   );
 };

@@ -5,11 +5,15 @@
 
 .bg-footer {
   background-image: url("./assets/footergradient.svg");
-  background-repeat: no-repeat;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;  
 }
 .bg-header {
   background-image: url("./assets/headergradient.svg");
-  background-repeat: no-repeat;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;  
 }
 
 
@@ -18,7 +22,7 @@
 
 @layer base {
   html {
-    font-family: Inter, system-ui, sans-serif;
+    font-family: Inter;
   }
 
   :root {
@@ -121,3 +125,5 @@
     @apply bg-background text-foreground;
   }
 }
+
+
