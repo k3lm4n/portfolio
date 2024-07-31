@@ -16,8 +16,11 @@ function Experience() {
   return (
     <div id="experiences">
       <div className="w-full h-full my-16 flex flex-col gap-6 justify-center items-center">
-        <div className="w-full">
+      <div className="w-full mb-9 flex flex-col gap-3">
           <h1 className="text-4xl font-bold text-center">Timeline</h1>
+          <h3 className="text-base font-extralight text-center text-medium-gray">
+          A journey through my career highlights, showcasing key milestones, projects, and accomplishments.
+        </h3>
         </div>
         <VerticalTimeline>
           <VerticalTimelineElement

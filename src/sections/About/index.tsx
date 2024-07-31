@@ -32,6 +32,7 @@ export const About = () => {
               className="bg-gray-200 h-full"
             >
               <PopupButton
+              className=""
                 url="https://calendly.com/kelmandossantos/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                 rootElement={document.getElementById("root") as HTMLElement}
                 text="Get in touch"

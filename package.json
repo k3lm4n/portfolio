@@ -22,7 +22,8 @@
     "react-vertical-timeline-component": "^3.6.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "vertical-timeline-component-react": "^4.4.3"
+    "vertical-timeline-component-react": "^4.4.3",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "devDependencies": {
     "@types/node": "^20.14.11",
