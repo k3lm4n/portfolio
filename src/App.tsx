@@ -5,7 +5,7 @@ import Footer from "./sections/Footer";
 import Experience from "./sections/Experience";
 import GetInTouch from "./sections/GetInTouch";
 import TechStack from "./sections/TechStack";
-
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -26,6 +26,7 @@ function App() {
       <Container className="bg-footer">
         <Footer />
       </Container>
+      <Analytics/>
     </div>
   );
 }
