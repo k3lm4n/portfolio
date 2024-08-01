@@ -5,12 +5,10 @@ import Footer from "./sections/Footer";
 import Experience from "./sections/Experience";
 import GetInTouch from "./sections/GetInTouch";
 import TechStack from "./sections/TechStack";
-import ReactGA from 'react-ga4';
 
 
 function App() {
 
-  ReactGA.initialize('G-TLS1J632ZF');
   
   return (
     <div className="bg-[#F1F4FC] w-full h-full">
