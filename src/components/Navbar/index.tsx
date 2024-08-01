@@ -20,13 +20,17 @@ export const Navbar = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
     e.preventDefault();
-    const { href } = e.currentTarget;
+    // get the href and remove everything before the hash (#)
+    const href = e.currentTarget.href;
     const targetId = href.replace(/.*\#/, "");
+    // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
+    console.log('Element:', elem)
     elem?.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      inline: "nearest"
     });
+
   };
 
   const isTablet = useTablet();
@@ -73,7 +77,7 @@ export const Navbar = () => {
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
             <a href="#experiences" onClick={() => handleScroll}>
-              Experiences
+              Timeline
             </a>
           </NavigationMenuItem>
           <NavigationMenuItem className="cursor-pointer">
