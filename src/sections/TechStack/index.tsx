@@ -14,8 +14,82 @@ import {
   ZOdLogo,
   ZustandLogo,
 } from "@/assets";
+import BlurFade from "@/components/magicui/blur-fade";
 
 function TechStack() {
+  const TechStackArray = [
+    {
+      name: "React",
+      logo: ReactLogo,
+      description: "Web Framework",
+    },
+    {
+      name: "Express",
+      logo: ExpressLogo,
+      description: "Framework",
+    },
+    {
+      name: "Typescript",
+      logo: TSLogo,
+      description: "Language",
+    },
+    {
+      name: "Tailwind CSS",
+      logo: TailwindLogo,
+      description: "CSS Library",
+    },
+    {
+      name: "Expo",
+      logo: ExpoLogo,
+      description: "Mobile Framework",
+    },
+    {
+      name: "ZOD",
+      logo: ZOdLogo,
+      description: "Validator",
+    },
+    {
+      name: "Prisma",
+      logo: PrismaLogo,
+      description: "ORM",
+    },
+    {
+      name: "Zustand",
+      logo: ZustandLogo,
+      description: "Global State",
+    },
+    {
+      name: "Next",
+      logo: NextLogo,
+      description: "Web Framework",
+    },
+    {
+      name: "React Hook Form",
+      logo: ReactHookFormLogo,
+      description: "Library",
+    },
+    {
+      name: "Vercel",
+      logo: VercelLogo,
+      description: "Deployment",
+    },
+    {
+      name: "React Query",
+      logo: ReactQuery,
+      description: "Server State",
+    },
+    {
+      name: "Sanity",
+      logo: SanityLogo,
+      description: "Headless CMS",
+    },
+    {
+      name: "Node",
+      logo: NodeLogo,
+      description: "Interpreter",
+    },
+  ];
+
   return (
     <div id="techStack" className="flex flex-col gap-6">
       <div className="w-full mb-9 flex flex-col gap-3">
@@ -27,188 +101,26 @@ function TechStack() {
       <div className="w-full flex justify-center">
         <div className="w-[80%]">
           <div className="h-full grid grid-flow-row sm:grid-cols-4  lg:grid-cols-6 sm:grid-rows-7 grid-rows-12 lg:grid-rows-5  gap-4 auto-cols-auto ">
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center ">
-                <img src={ReactLogo} className="mt-6" alt="React" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>React</p>
+            {TechStackArray.map((tech, index) => (
+              <BlurFade
+                className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200"
+                key={index}
+                delay={0.25 + index * 0.05}
+                inView
+              >
+                <div className="flex flex-1 justify-center items-center ">
+                  <img src={tech.logo} className="mt-6" alt="React" />
                 </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Web Framework</p>
+                <div className="w-full px-6 pb-6 flex justify-between items-center">
+                  <div className="font-semibold text-onyx">
+                    <p>{tech.name}</p>
+                  </div>
+                  <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
+                    <p>{tech.description}</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={ExpressLogo} className="mt-6" alt="Express" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Express</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Framework</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={TSLogo} className="mt-6" alt="Typescript" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Typescript</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Language</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={TailwindLogo} className="mt-6" alt="Tailwind" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Tailwind CSS</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>CSS Library</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={ExpoLogo} className="mt-6" alt="Expo" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Expo</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Mobile Framework</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center ">
-                <img src={ZOdLogo} className="mt-6" alt="ZOD" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>ZOD</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Validator</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={PrismaLogo} className="mt-6" alt="Prisma" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Prisma</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>ORM</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center ">
-                <img src={ZustandLogo} className="mt-6" alt="React" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Zustand</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Global State</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={NextLogo} className="mt-6" alt="Next" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Next</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Web Framework</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={ReactHookFormLogo} className="mt-6" alt="React" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>React Hook Form</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Library</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={VercelLogo} className="mt-6" alt="Vercel" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Vercel</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Deployment</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={ReactQuery} className="mt-6" alt="React Query" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>React Query</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Server State</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={SanityLogo} className="mt-6" alt="Sanity" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Sanity</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Headless CMS</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
-              <div className="flex flex-1 justify-center items-center">
-                <img src={NodeLogo} className="mt-6" alt="Node" />
-              </div>
-              <div className="w-full px-6 pb-6 flex justify-between items-center">
-                <div className="font-semibold text-onyx">
-                  <p>Node</p>
-                </div>
-                <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                  <p>Interpreter</p>
-                </div>
-              </div>
-            </div>
+              </BlurFade>
+            ))}
           </div>
         </div>
       </div>

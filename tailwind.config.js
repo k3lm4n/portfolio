@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -52,16 +52,15 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
 
-        black:'#0D0D0D',
-        white:'#FFFFFF',
-        onyx: '#181818',
-        'dark-gray':'#808080',
-        'medium-gray':'rgba(128, 128, 128, 0.5)',
-        'light-gray':'#C5C5C5',
-        'light-blue':'rgba(63, 100, 234, 0.43)',
-        'light-red':'rgba(233, 63, 64, 0.43)',
-        'light-yellow':'rgba(255, 184, 0, 0.43)',
-
+        black: "#0D0D0D",
+        white: "#FFFFFF",
+        onyx: "#181818",
+        "dark-gray": "#808080",
+        "medium-gray": "rgba(128, 128, 128, 0.5)",
+        "light-gray": "#C5C5C5",
+        "light-blue": "rgba(63, 100, 234, 0.43)",
+        "light-red": "rgba(233, 63, 64, 0.43)",
+        "light-yellow": "rgba(255, 184, 0, 0.43)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -82,7 +81,32 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      animation: {
+        "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        slide: "slide var(--speed) ease-in-out infinite alternate",
+      },
+      keyframes: {
+        "spin-around": {
+          "0%": {
+            transform: "translateZ(0) rotate(0)",
+          },
+          "15%, 35%": {
+            transform: "translateZ(0) rotate(90deg)",
+          },
+          "65%, 85%": {
+            transform: "translateZ(0) rotate(270deg)",
+          },
+          "100%": {
+            transform: "translateZ(0) rotate(360deg)",
+          },
+        },
+        slide: {
+          to: {
+            transform: "translate(calc(100cqw - 100%), 0)",
+          },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

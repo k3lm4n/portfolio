@@ -5,18 +5,17 @@ import Footer from "./sections/Footer";
 import Experience from "./sections/Experience";
 import GetInTouch from "./sections/GetInTouch";
 import TechStack from "./sections/TechStack";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+
 
 function App() {
-
-  
   return (
     <div className="bg-[#F1F4FC] w-full h-full">
       <Container className="bg-header relative">
         <Navbar />
         <About />
       </Container>
-      <Container className="px-4">
+      <Container className="px-4 relative">
         <Experience />
       </Container>
       <Container>
@@ -26,7 +25,7 @@ function App() {
       <Container className="bg-footer">
         <Footer />
       </Container>
-      <Analytics/>
+      <Analytics />
     </div>
   );
 }
