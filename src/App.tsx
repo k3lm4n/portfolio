@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
-    <div className="bg-[#F1F4FC] w-full h-full">
+    <div className="bg-[#F1F4FC] dark:bg-onyx w-full h-full">
       <Container className="bg-header relative">
         <Navbar />
         <About />

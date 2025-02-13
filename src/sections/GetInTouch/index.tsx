@@ -29,7 +29,7 @@ function GetInTouch() {
       <div className="w-[80%] lg:w-56">
         <ShimmerButton
           onClick={HandleCalendly}
-          className="h-16 w-full lg:w-56 rounded-lg flex gap-4 text-xl px-8 "
+          className="h-16 w-full lg:w-56 rounded-lg flex gap-4 text-xl px-8 dark:text-white dark:bg-onyx"
           borderRadius="20px"
         >
           {!isMobile && <SendHorizontal />}

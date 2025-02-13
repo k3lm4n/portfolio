@@ -12,8 +12,75 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { useAppTheme } from "@/hooks/useAppTheme";
 
 function Experience() {
+  type TimelineItem = {
+    date: string;
+    title: string;
+    subtitle: string;
+    location: string;
+    logo: string;
+    width: number;
+    type: "work" | "education";
+    icon: JSX.Element;
+  };
+
+  const timelineItems: TimelineItem[] = [
+    {
+      date: "September 2023 - present",
+      title: "Full-stack Developer",
+      subtitle: "TSCO",
+      location: "Luanda, AO",
+      logo: TSCOLogo,
+      width: 128,
+      type: "work",
+      icon: <Briefcase color="#fff" />,
+    },
+    {
+      date: "January 2024 - June 2024",
+      title: "Full-stack Developer",
+      subtitle: "Horizon",
+      location: "Sheridan, WY, USA",
+      logo: HorizonLogo,
+      width: 56,
+      type: "work",
+      icon: <Briefcase color="#fff" />,
+    },
+    {
+      date: "September 2022 - September 2023",
+      title: "Software Developer and Manager",
+      subtitle: "CBS",
+      location: "Luanda, AO",
+      logo: CBSLogo,
+      width: 56,
+      type: "work",
+      icon: <Briefcase color="#fff" />,
+    },
+    {
+      date: "July 2021 - July 2022",
+      title: "Full-stack Developer",
+      subtitle: "Hestia",
+      location: "Luanda, AO",
+      logo: HestiaLogo,
+      width: 56,
+      type: "work",
+      icon: <Briefcase color="#fff" />,
+    },
+    {
+      date: "March 2018 - October 2023",
+      title: "Bachelor of Science",
+      subtitle: "Computer Engineering",
+      location: "ISPTEC - Luanda, AO",
+      logo: ISPTECLogo,
+      width: 56,
+      type: "education",
+      icon: <GraduationCap color="#fff" />,
+    },
+  ];
+
+  const { appTheme } = useAppTheme();
+
   return (
     <BlurFade delay={0.1 * 4} inView>
       <div id="experiences">
@@ -26,101 +93,46 @@ function Experience() {
             </h3>
           </div>
           <VerticalTimeline>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              contentStyle={{ background: "#fff", color: "#181818" }}
-              contentArrowStyle={{ borderRight: "7px solid  #fff" }}
-              date="September 2023 - present"
-              iconStyle={{ background: "#181818" }}
-              icon={<Briefcase color="#fff" />}
-            >
-              <div className="flex gap-4 items-center">
-                <div className="flex">
-                  <img width={128} src={TSCOLogo} alt="" />
+            {timelineItems.map((item, index) => (
+              <VerticalTimelineElement
+                key={index}
+                className={`vertical-timeline-element--${item.type}  dark:text-ligth-gray `}
+                contentStyle={{
+                  background:
+                    appTheme === "dark" ? "rgba(255, 255, 255, 0.1)" : "#fff",
+                  color: appTheme === "dark" ? "#fff" : "#181818",
+                  backdropFilter: "blur(64px)",
+                  WebkitBackdropFilter: "blur(64px)",
+                }}
+                contentArrowStyle={{
+                  borderRight:
+                    appTheme === "dark"
+                      ? "7px solid rgba(255, 255, 255, 0.1)"
+                      : "7px solid #fff",
+                }}
+                date={item.date}
+                iconStyle={{ background: "#181818", color: "#fff" }}
+                icon={item.icon}
+                
+              >
+                <div className="flex gap-4 items-center dark:text-white">
+                  <div className="flex">
+                    <img
+                      width={item.width}
+                      src={item.logo}
+                      alt={item.subtitle}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="font-semibold text-lg">{item.title}</h3>
+                    {item.subtitle && (
+                      <h4 className="text-sm font-medium">{item.subtitle}</h4>
+                    )}
+                    <h4 className="text-sm font-light">{item.location}</h4>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg">
-                    Full-stack Developer
-                  </h3>
-                  <h4 className="text-sm font-light">TSCO - Luanda, AO</h4>
-                </div>
-              </div>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="January 2024 - June 2024"
-              iconStyle={{ background: "#181818" }}
-              icon={<Briefcase color="#fff" />}
-            >
-              <div className="flex gap-4 items-center">
-                <div>
-                  <img className="" width={56} src={HorizonLogo} alt="" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg">
-                    Full-stack Developer
-                  </h3>
-                  <h4 className="text-sm font-light">
-                    Horizon - Sheridan, WY, USA
-                  </h4>
-                </div>
-              </div>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="September 2022 - September 2023"
-              iconStyle={{ background: "#181818", color: "#fff" }}
-              icon={<Briefcase color="#fff" />}
-            >
-              <div className="flex gap-4 items-center">
-                <div className="flex">
-                  <img width={56} src={CBSLogo} alt="" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg">
-                    Software Developer and Manager
-                  </h3>
-                  <h4 className="text-sm font-light">CBS - Luanda, AO</h4>
-                </div>
-              </div>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="July 2021 - July 2022"
-              iconStyle={{ background: "#181818", color: "#fff" }}
-              icon={<Briefcase color="#fff" />}
-            >
-              <div className="flex gap-4 items-center">
-                <div className="flex">
-                  <img width={56} src={HestiaLogo} alt="" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg">
-                    Full-stack Developer
-                  </h3>
-                  <h4 className="text-sm font-light">Hestia - Luanda, AO</h4>
-                </div>
-              </div>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--education"
-              date="March 2018 - October 2023"
-              iconStyle={{ background: "#181818" }}
-              icon={<GraduationCap color="#fff" />}
-            >
-              <div className="flex gap-4 items-center">
-                <div className="flex">
-                  <img width={56} src={ISPTECLogo} alt="" />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="font-semibold text-lg">
-                    Bachelor of Science{" "}
-                  </h3>
-                  <h4 className="text-sm font-medium"> Computer Engineering</h4>
-                  <h4 className="text-sm font-light">ISPTEC - Luanda, AO</h4>
-                </div>
-              </div>
-            </VerticalTimelineElement>
+              </VerticalTimelineElement>
+            ))}
           </VerticalTimeline>
         </div>
       </div>

@@ -1,10 +1,18 @@
 export { default as GradientHeaderSVG } from "./headergradient.svg";
 export { default as GradientFooterSVG } from "./footergradient.svg";
-export { default as SunSVG } from "./Sun.svg";
-export { default as VectorSVG } from "./Apps/Vector.svg";
-export { default as LinkedInSVG } from "./Apps/LinkedIn.svg";
-export { default as GitHubSVG } from "./Apps/Github.svg";
-export { default as DiscordSVG } from "./Apps/Discord.svg";
+export { default as SunSVG } from "./dark/Sun.svg";
+export { default as MoonSVG } from "./light/Moon.svg";
+export { default as VectorSVG } from "./light/Apps/Vector.svg";
+export { default as LinkedInSVG } from "./light/Apps/LinkedIn.svg";
+export { default as GitHubSVG } from "./light/Apps/Github.svg";
+export { default as DiscordSVG } from "./light/Apps/Discord.svg";
+
+
+export { default as LinkedInLightSVG } from "./dark/Apps/LinkedIn.svg";
+export { default as GitHubLightSVG } from "./dark/Apps/Github.svg";
+export { default as DiscordLightSVG } from "./dark/Apps/Discord.svg";
+
+
 
 //Experience
 export { default as HestiaLogo } from "./Logos/logo.svg";
@@ -30,7 +38,7 @@ export { default as ZustandLogo } from "./Tools/Zustand.svg";
 export { default as ExpoLogo } from "./Tools/Expo.svg";
 
 //Sections
-export { default as AboutSVG } from "./User.svg";
-export { default as ExperienceSVG } from "./Bag.svg";
-export { default as TechStackSVG } from "./Vector.svg";
-export { default as GetInTouchSVG } from "./Send.svg";
+export { default as AboutSVG } from "./light/User.svg";
+export { default as ExperienceSVG } from "./light/Bag.svg";
+export { default as TechStackSVG } from "./light/Vector.svg";
+export { default as GetInTouchSVG } from "./light/Send.svg";
