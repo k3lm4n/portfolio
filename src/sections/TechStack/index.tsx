@@ -23,7 +23,7 @@ function TechStack() {
     {
       name: "React",
       logo: ReactLogo,
-      description: "Web Framework",
+      description: "Framework",
     },
     {
       name: "Express",
@@ -36,14 +36,14 @@ function TechStack() {
       description: "Language",
     },
     {
-      name: "Tailwind CSS",
+      name: "Tailwind",
       logo: TailwindLogo,
-      description: "CSS Library",
+      description: "CSSLibrary",
     },
     {
       name: "Expo",
       logo: ExpoLogo,
-      description: "Mobile Framework",
+      description: "Framework",
     },
     {
       name: "ZOD",
@@ -58,15 +58,15 @@ function TechStack() {
     {
       name: "Zustand",
       logo: ZustandLogo,
-      description: "Global State",
+      description: "GlobalState",
     },
     {
       name: "Next",
       logo: NextLogo,
-      description: "Web Framework",
+      description: "Framework",
     },
     {
-      name: "React Hook Form",
+      name: "ReactHookForm",
       logo: ReactHookFormLogo,
       description: "Library",
     },
@@ -76,19 +76,19 @@ function TechStack() {
       description: "Deployment",
     },
     {
-      name: "React Query",
+      name: "TanStack",
       logo: ReactQuery,
-      description: "Server State",
+      description: "ServerState",
     },
     {
       name: "Sanity",
       logo: SanityLogo,
-      description: "Headless CMS",
+      description: "HeadlessCMS",
     },
     {
-      name: "Node",
+      name: "NodeJs",
       logo: NodeLogo,
-      description: "Interpreter",
+      description: "Enviroment",
     },
   ];
   const isMobile = useMobile();

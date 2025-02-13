@@ -16,15 +16,15 @@ const TechCard = ({
   logo: string;
 }) => {
   return (
-    <figure className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200">
+    <figure className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center dark:bg-gray-200/30 bg-gray-200">
       <div className="flex flex-1 justify-center items-center ">
         <img src={logo} className="mt-6" alt="React" />
       </div>
-      <div className="w-full px-6 pb-6 flex justify-between items-center">
+      <div className="w-full px-6 pb-6 flex justify-between items-center text-sm">
         <div className="font-semibold text-onyx">
           <p>{name}</p>
         </div>
-        <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
+        <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center ">
           <p>{description}</p>
         </div>
       </div>
