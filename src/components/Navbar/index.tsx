@@ -19,10 +19,11 @@ import {
   NavigationMenuList,
 } from "../ui/navigation-menu";
 import useTablet from "@/hooks/useTablet";
-import { useAppTheme } from "@/hooks/useAppTheme";
+import useDarkMode,{ useAppTheme} from "@/hooks/useDarkMode";
 
 export const Navbar = () => {
-  const { appTheme, setAppTheme } = useAppTheme();
+  const {setDarkMode } = useDarkMode();
+  const {appTheme} = useAppTheme();
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
@@ -42,25 +43,6 @@ export const Navbar = () => {
       top: offsetPosition,
     });
   };
-
-  function handleClick() {
-    //check if the theme is dark or not
-    if (localStorage.theme === "dark" || !("theme" in localStorage)) {
-      //add class=dark in html element
-      document.documentElement.classList.add("dark");
-      setAppTheme("dark");
-    } else {
-      //remove class=dark in html element
-      document.documentElement.classList.remove("dark");
-      setAppTheme("light");
-    }
-
-    if (localStorage.theme === "dark") {
-      localStorage.theme = "light";
-    } else {
-      localStorage.theme = "dark";
-    }
-  }
 
   const isTablet = useTablet();
   return isTablet ? (
@@ -125,7 +107,7 @@ export const Navbar = () => {
             className="cursor-pointer"
             onClick={() => window.open("https://github.com/k3lm4n", "_blank")}
           >
-            {appTheme === "dark" ? (
+            {appTheme ? (
               <img src={GitHubLightSVG} alt="GitHub" />
             ) : (
               <img src={GitHubSVG} alt="GitHub" />
@@ -140,7 +122,7 @@ export const Navbar = () => {
               )
             }
           >
-            {appTheme === "dark" ? (
+            {appTheme ? (
               <img src={LinkedInLightSVG} alt="LinkedIn" />
             ) : (
               <img src={LinkedInSVG} alt="LinkedIn" />
@@ -155,15 +137,18 @@ export const Navbar = () => {
               )
             }
           >
-            {appTheme === "dark" ? (
+            {appTheme ? (
               <img src={DiscordLightSVG} alt="Discord" />
             ) : (
               <img src={DiscordSVG} alt="Discord" />
             )}
           </NavigationMenuItem>
           <span className="h-6 border border-dark-gray/25" />
-          <NavigationMenuItem className="cursor-pointer" onClick={handleClick}>
-            {appTheme === "dark" ? (
+          <NavigationMenuItem
+            className="cursor-pointer"
+            onClick={() => setDarkMode(!appTheme)}
+          >
+            {appTheme ? (
               <img src={SunSVG} alt="Sun" />
             ) : (
               <img src={MoonSVG} alt="Moon" />

@@ -12,7 +12,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { useAppTheme } from "@/hooks/useAppTheme";
+import {useAppTheme} from "@/hooks/useDarkMode";
 
 function Experience() {
   type TimelineItem = {
@@ -81,6 +81,7 @@ function Experience() {
 
   const { appTheme } = useAppTheme();
 
+
   return (
     <BlurFade delay={0.1 * 4} inView>
       <div id="experiences">
@@ -96,24 +97,21 @@ function Experience() {
             {timelineItems.map((item, index) => (
               <VerticalTimelineElement
                 key={index}
-                className={`vertical-timeline-element--${item.type}  dark:text-ligth-gray `}
+                className={`vertical-timeline-element--${item.type}  dark:text-light-gray `}
                 contentStyle={{
-                  background:
-                    appTheme === "dark" ? "rgba(255, 255, 255, 0.1)" : "#fff",
-                  color: appTheme === "dark" ? "#fff" : "#181818",
-                  backdropFilter: "blur(64px)",
-                  WebkitBackdropFilter: "blur(64px)",
+                  background: appTheme ? "rgba(255, 255, 255, 0.1)" : "#fff",
+                  color: appTheme ? "#fff" : "#181818",
+                  backdropFilter: appTheme ? "blur(64px)" : "",
+                  WebkitBackdropFilter: appTheme ? "blur(64px)" : "",
                 }}
                 contentArrowStyle={{
-                  borderRight:
-                    appTheme === "dark"
-                      ? "7px solid rgba(255, 255, 255, 0.1)"
-                      : "7px solid #fff",
+                  borderRight: appTheme
+                    ? "7px solid rgba(255, 255, 255, 0.1)"
+                    : "7px solid #fff",
                 }}
                 date={item.date}
                 iconStyle={{ background: "#181818", color: "#fff" }}
                 icon={item.icon}
-                
               >
                 <div className="flex gap-4 items-center dark:text-white">
                   <div className="flex">

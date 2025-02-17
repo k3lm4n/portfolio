@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 
-body * {
-  @apply transition-colors duration-200;
+.dark-mode-transition {
+  @apply transition-colors duration-500;
 }
 
 .bg-footer {
