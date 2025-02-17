@@ -12,19 +12,19 @@ export default function Footer() {
   };
 
   return (
-    <div className="w-full p-11 h-full flex flex-col-reverse md:flex-row md:justify-around lg:items-end gap-4 ">
-      <div className="h-full flex flex-col justify-between md:items-end max-sm:pb-10 md:gap-12 lg:gap-24">
+    <div className="w-full p-11 h-full flex flex-col-reverse md:flex-row md:justify-between lg:items-end gap-4 ">
+      <div className="h-full w-full flex flex-col justify-between md:items-end max-sm:pb-10 md:gap-12 lg:gap-24">
         <div className="h-full w-full">
           <div className="w-24 h-24"></div>
-          <div className="flex items-center h-full text-sm  font-black">
+          <div className="flex items-center h-full text-l  font-black">
             Thanks for stopping by!
           </div>
         </div>
-        <div className="flex items-center h-full text-xs font-thin">
+        <div className="flex h-full w-full text-xs font-thin">
           ©2024 Kelman Dias dos Santos. All Rights Reserved.
         </div>
       </div>
-      <div className="lg:w-[20%] h-full flex flex-col gap-4 md:flex-row justify-between">
+      <div className="lg:w-[30%] w-full h-full flex flex-col gap-4 md:flex-row justify-between ">
         <div className="flex flex-col ">
           <span className="mb-8 font-bold">Links</span>
           <div className="flex flex-col gap-4 text-sm font-light w-full ">

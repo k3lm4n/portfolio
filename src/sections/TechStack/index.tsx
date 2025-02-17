@@ -97,7 +97,7 @@ function TechStack() {
     <div id="techStack" className="flex flex-col gap-6">
       <div className="w-full mb-9 flex flex-col gap-3">
         <h1 className="text-4xl font-bold text-center">Tech Stack</h1>
-        <h3 className="text-base font-extralight text-center text-medium-gray">
+        <h3 className="text-base font-extralight text-center text-hard-gray dark:text-light-gray">
           Explore the technologies and tools powering my projects.
         </h3>
       </div>
