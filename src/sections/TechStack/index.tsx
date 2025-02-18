@@ -107,7 +107,7 @@ function TechStack() {
             <div className="h-full grid grid-flow-row sm:grid-cols-4  lg:grid-cols-6 sm:grid-rows-7 grid-rows-12 lg:grid-rows-5  gap-4 auto-cols-auto ">
               {TechStackArray.map((tech, index) => (
                 <BlurFade
-                  className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200"
+                  className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200 dark:bg-gray-200/30"
                   key={index}
                   delay={0.25 + index * 0.05}
                   inView

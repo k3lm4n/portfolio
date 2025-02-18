@@ -12,6 +12,10 @@ import {
   MoonSVG,
   // SunSVG,
   TechStackSVG,
+  TechStackDarkSVG,
+  AboutDarkSVG,
+  ExperienceDarkSVG,
+  GetInTouchDarkSVG,
 } from "@/assets";
 import {
   NavigationMenu,
@@ -19,11 +23,11 @@ import {
   NavigationMenuList,
 } from "../ui/navigation-menu";
 import useTablet from "@/hooks/useTablet";
-import useDarkMode,{ useAppTheme} from "@/hooks/useDarkMode";
+import useDarkMode, { useAppTheme } from "@/hooks/useDarkMode";
 
 export const Navbar = () => {
-  const {setDarkMode } = useDarkMode();
-  const {appTheme} = useAppTheme();
+  const { setDarkMode } = useDarkMode();
+  const { appTheme } = useAppTheme();
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
@@ -48,31 +52,59 @@ export const Navbar = () => {
   return isTablet ? (
     <>
       <div className="mx-auto flex items-center justify-center w-full h-full z-20">
-        <NavigationMenu className="fixed w-[85%] flex  h-16 dark:bg-[#18181D/25] bg-onyx/25 backdrop-blur-3xl   rounded-xl border-white/30 bottom-5 border">
-          <NavigationMenuList className=" flex justify-between px-9 gap-10">
-            <NavigationMenuItem className="cursor-pointer ">
-              <a href="#about" onClick={() => handleScroll}>
-                <img src={AboutSVG} alt="" />
-              </a>
-            </NavigationMenuItem>
+        <NavigationMenu className="fixed w-[85%] flex h-16 dark:bg-[#18181D/25] bg-onyx/25 backdrop-blur-3xl items-center justify-center  rounded-xl border-white/30 bottom-5 border">
+          <NavigationMenuList className=" flex items-center ">
+            <div className="flex w-full justify-center items-center gap-8 ">
+              <NavigationMenuItem className="cursor-pointer w-7 h-7">
+                <a href="#about" onClick={() => handleScroll}>
+                  {appTheme ? (
+                    <img src={AboutDarkSVG} alt="" />
+                  ) : (
+                    <img src={AboutSVG} alt="" />
+                  )}
+                </a>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem className="cursor-pointer  ">
-              <a href="#experiences" onClick={() => handleScroll}>
-                <img src={ExperienceSVG} alt="" />
-              </a>
-            </NavigationMenuItem>
+              <NavigationMenuItem className="cursor-pointer w-7 h-7 ">
+                <a href="#experiences" onClick={() => handleScroll}>
+                  {appTheme ? (
+                    <img src={ExperienceDarkSVG} alt="" />
+                  ) : (
+                    <img src={ExperienceSVG} alt="" />
+                  )}
+                </a>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem className="cursor-pointer  ">
-              <a href="#techStack" onClick={() => handleScroll}>
-                <img src={TechStackSVG} alt="" />
-              </a>
-            </NavigationMenuItem>
+              <NavigationMenuItem className="cursor-pointer w-7 h-7 ">
+                <a href="#techStack" onClick={() => handleScroll}>
+                  {appTheme ? (
+                    <img src={TechStackDarkSVG} alt="" />
+                  ) : (
+                    <img src={TechStackSVG} alt="" />
+                  )}
+                </a>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem className="cursor-pointer  ">
-              <a href="#getInTouch" onClick={() => handleScroll}>
-                <img src={GetInTouchSVG} alt="" />
-              </a>
-            </NavigationMenuItem>
+              <NavigationMenuItem className="cursor-pointer w-7 h-7 ">
+                <a href="#getInTouch" onClick={() => handleScroll}>
+                  {appTheme ? (
+                    <img src={GetInTouchDarkSVG} alt="" />
+                  ) : (
+                    <img src={GetInTouchSVG} alt="" />
+                  )}
+                </a>
+              </NavigationMenuItem>
+              <NavigationMenuItem
+                className="cursor-pointer w-7 h-7"
+                onClick={() => setDarkMode(!appTheme)}
+              >
+                {appTheme ? (
+                  <img src={SunSVG} alt="Sun" />
+                ) : (
+                  <img src={MoonSVG} alt="Moon" />
+                )}
+              </NavigationMenuItem>
+            </div>
           </NavigationMenuList>
         </NavigationMenu>
       </div>

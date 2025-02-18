@@ -42,3 +42,9 @@ export { default as AboutSVG } from "./light/User.svg";
 export { default as ExperienceSVG } from "./light/Bag.svg";
 export { default as TechStackSVG } from "./light/Vector.svg";
 export { default as GetInTouchSVG } from "./light/Send.svg";
+
+
+export { default as AboutDarkSVG } from "./dark/User.svg";
+export { default as ExperienceDarkSVG } from "./dark/Bag.svg";
+export { default as TechStackDarkSVG } from "./dark/Stack.svg";
+export { default as GetInTouchDarkSVG } from "./dark/Send.svg";

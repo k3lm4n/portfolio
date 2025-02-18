@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const MOBILE_MAX_WIDTH = 425;
+const MOBILE_MAX_WIDTH = 768;
 
 export default function useTablet() {
   const [isTablet, setIsTablet] = useState(false);
 
   function handleResize() {
-    setIsTablet(window.innerWidth <= MOBILE_MAX_WIDTH);
+    setIsTablet(window.innerWidth < MOBILE_MAX_WIDTH);
   }
 
   useEffect(() => {
