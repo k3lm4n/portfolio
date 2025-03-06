@@ -37,7 +37,7 @@ export const About = () => {
               <Button
                 variant={"outline"}
                 size={"lg"}
-                className="bg-gray-200 dark:bg-onyx dark:text-dark-gray h-full"
+                className="bg-gray-200 dark:bg-onyx dark:text-gray-200 h-full"
               >
                 <PopupButton
                   className=""
