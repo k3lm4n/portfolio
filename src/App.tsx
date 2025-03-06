@@ -6,6 +6,7 @@ import Experience from "./sections/Experience";
 import GetInTouch from "./sections/GetInTouch";
 import TechStack from "./sections/TechStack";
 import { Analytics } from "@vercel/analytics/react";
+import ProjectsContrib from "./sections/ProjectsAndContribuitions";
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
       </Container>
       <Container className="px-4 relative">
         <Experience />
+        <ProjectsContrib/>
       </Container>
-      <Container>
+      <Container className="pt-8">
         <TechStack />
         <GetInTouch />
       </Container>

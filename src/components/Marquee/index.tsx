@@ -16,7 +16,7 @@ const TechCard = ({
   logo: string;
 }) => {
   return (
-    <figure className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center dark:bg-gray-200/30 bg-gray-200">
+    <figure className="col-span-2 w-64 h-64 rounded-3xl flex items-center flex-col justify-center dark:bg-gray-200/30 bg-white">
       <div className="flex flex-1 justify-center items-center ">
         <img src={logo} className="mt-6" alt="React" />
       </div>
@@ -24,7 +24,7 @@ const TechCard = ({
         <div className="font-semibold text-onyx">
           <p>{name}</p>
         </div>
-        <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center ">
+        <div className="px-3 py-1 bg-slate-100 rounded-3xl font-medium text-dark-gray text-center ">
           <p>{description}</p>
         </div>
       </div>
@@ -37,42 +37,19 @@ export function MarqueeTech(
 ) {
   const firstRow = techData.slice(0, techData.length / 2);
   const secondRow = techData.slice(techData.length / 2);
-  const thirdRow = techData.slice(0, techData.length / 2);
-  const fourthRow = techData.slice(techData.length / 2);
 
   return (
-    <div className=" relative flex h-[40rem] w-full flex-row items-center justify-center gap-4 overflow-hidden [perspective:300px] ">
-      <div
-        className="flex flex-row items-center gap-4"
-        style={{
-          transform:
-            "translateX(-100px) translateY(0px) translateZ(-100px) rotateX(10deg) rotateY(-10deg) rotateZ(15deg)",
-        }}
-      >
-        <Marquee pauseOnHover vertical className="[--duration:30s]">
-          {firstRow.map((techData, index) => (
-            <TechCard key={index} {...techData} />
-          ))}
-        </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:25s]" vertical>
-          {secondRow.map((techData, index) => (
-            <TechCard key={index} {...techData} />
-          ))}
-        </Marquee>
-        <Marquee  pauseOnHover className="[--duration:35s]" vertical>
-          {thirdRow.map((techData, index) => (
-            <TechCard key={index} {...techData} />
-          ))}
-        </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:40s]" vertical>
-          {fourthRow.map((techData, index) => (
-            <TechCard key={index} {...techData} />
-          ))}
-        </Marquee>
-      </div>
-
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-[#F1F4FC] dark:from-onyx"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#F1F4FC] dark:from-onyx"></div>
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {firstRow.map((tech, index) => (
+          <TechCard key={index} {...tech} />
+        ))}
+      </Marquee>
+      <Marquee reverse pauseOnHover className="[--duration:30s]">
+        {secondRow.map((tech, index) => (
+          <TechCard key={index} {...tech} />
+        ))}
+      </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#F1F4FC] dark:from-onyx"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#F1F4FC] dark:from-onyx"></div>
     </div>
