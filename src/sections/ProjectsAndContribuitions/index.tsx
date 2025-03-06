@@ -7,7 +7,7 @@ const features = [
   {
     Icon: RiStickyNoteAddLine,
     name: "Messier Notes",
-    description: "We automatically save your files as you type.",
+    description: "Messier Notes is a productivity tool, offering task management, note-taking, and collaboration in one seamless platform.",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
   },
@@ -22,14 +22,14 @@ const features = [
   {
     Icon: MdMusicNote,
     name: "Smooth Player",
-    description: "Supports 100+ languages and counting.",
+    description: "Smooth Player is a sleek Spotify clone with playlist management, song search, and a responsive design for seamless music streaming.",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
   },
   {
     Icon: RiRobot2Line,
     name: "Venator",
-    description: "Use the calendar to filter your files by date.",
+    description: "Worked in Venator is an AI-powered inbox integrated with LinkedIn and Email, designed to identify and engage potential clients, streamlining prospecting and outreach.",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
   },
@@ -37,7 +37,7 @@ const features = [
     Icon: RiWechatLine,
     name: "Social Mate",
     description:
-      "Get notified when someone shares a file or mentions you in a comment.",
+      "Social Mate is a web platform designed to help students share information, collaborate, and communicate effectively to achieve better results in tests.",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
   },
