@@ -20,7 +20,7 @@ function App() {
         <Experience />
         <ProjectsContrib/>
       </Container>
-      <Container>
+      <Container className="pt-8">
         <TechStack />
         <GetInTouch />
       </Container>
