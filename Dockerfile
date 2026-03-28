@@ -1,29 +1,23 @@
-# Stage 1: Build
-FROM node:24-alpine AS builder
+# Use an official Node.js runtime as the base image
+FROM node:24-alpine
 
+# Set the working directory in the container
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm ci --legacy-peer-deps
+# Copy the package.json and package-lock.json files to the container
+COPY package.json package-lock.json ./
 
+# Install project dependencies
+RUN npm install
+
+# Copy the rest of the project files to the container
 COPY . .
+
+# Build the React app
 RUN npm run build
 
-# Stage 2: Serve with nginx
-FROM nginx:alpine
+# Expose the port that the server will listen on
+EXPOSE 4173
 
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Handle client-side routing (React Router / SPA)
-RUN echo 'server { \
-    listen 80; \
-    location / { \
-        root /usr/share/nginx/html; \
-        index index.html; \
-        try_files $uri $uri/ /index.html; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# Start the application
+CMD [ "npm", "run", "preview" ]
