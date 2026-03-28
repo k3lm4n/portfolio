@@ -18,11 +18,14 @@ import BlurFade from "@/components/magicui/blur-fade";
 import useMobile from "@/hooks/useMobile";
 import MarqueeTech from "@/components/Marquee";
 import { useTranslation } from "react-i18next";
+import type en from "@/i18n/locales/en.json";
+
+type DescriptionKey = keyof typeof en["techStack"]["descriptions"];
 
 function TechStack() {
   const { t } = useTranslation();
 
-  const TechStackArray = [
+  const TechStackArray: { name: string; logo: string; descriptionKey: DescriptionKey }[] = [
     { name: "React", logo: ReactLogo, descriptionKey: "Framework" },
     { name: "Express", logo: ExpressLogo, descriptionKey: "Framework" },
     { name: "Typescript", logo: TSLogo, descriptionKey: "Language" },
