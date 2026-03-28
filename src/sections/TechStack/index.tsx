@@ -17,88 +17,35 @@ import {
 import BlurFade from "@/components/magicui/blur-fade";
 import useMobile from "@/hooks/useMobile";
 import MarqueeTech from "@/components/Marquee";
+import { useTranslation } from "react-i18next";
 
 function TechStack() {
+  const { t } = useTranslation();
+
   const TechStackArray = [
-    {
-      name: "React",
-      logo: ReactLogo,
-      description: "Framework",
-    },
-    {
-      name: "Express",
-      logo: ExpressLogo,
-      description: "Framework",
-    },
-    {
-      name: "Typescript",
-      logo: TSLogo,
-      description: "Language",
-    },
-    {
-      name: "Tailwind",
-      logo: TailwindLogo,
-      description: "CSSLibrary",
-    },
-    {
-      name: "Expo",
-      logo: ExpoLogo,
-      description: "Framework",
-    },
-    {
-      name: "ZOD",
-      logo: ZOdLogo,
-      description: "Validator",
-    },
-    {
-      name: "Prisma",
-      logo: PrismaLogo,
-      description: "ORM",
-    },
-    {
-      name: "Zustand",
-      logo: ZustandLogo,
-      description: "GlobalState",
-    },
-    {
-      name: "Next",
-      logo: NextLogo,
-      description: "Framework",
-    },
-    {
-      name: "ReactHookForm",
-      logo: ReactHookFormLogo,
-      description: "Library",
-    },
-    {
-      name: "Vercel",
-      logo: VercelLogo,
-      description: "Deployment",
-    },
-    {
-      name: "TanStack",
-      logo: ReactQuery,
-      description: "ServerState",
-    },
-    {
-      name: "Sanity",
-      logo: SanityLogo,
-      description: "HeadlessCMS",
-    },
-    {
-      name: "NodeJs",
-      logo: NodeLogo,
-      description: "Enviroment",
-    },
+    { name: "React", logo: ReactLogo, descriptionKey: "Framework" },
+    { name: "Express", logo: ExpressLogo, descriptionKey: "Framework" },
+    { name: "Typescript", logo: TSLogo, descriptionKey: "Language" },
+    { name: "Tailwind", logo: TailwindLogo, descriptionKey: "CSSLibrary" },
+    { name: "Expo", logo: ExpoLogo, descriptionKey: "Framework" },
+    { name: "ZOD", logo: ZOdLogo, descriptionKey: "Validator" },
+    { name: "Prisma", logo: PrismaLogo, descriptionKey: "ORM" },
+    { name: "Zustand", logo: ZustandLogo, descriptionKey: "GlobalState" },
+    { name: "Next", logo: NextLogo, descriptionKey: "Framework" },
+    { name: "ReactHookForm", logo: ReactHookFormLogo, descriptionKey: "Library" },
+    { name: "Vercel", logo: VercelLogo, descriptionKey: "Deployment" },
+    { name: "TanStack", logo: ReactQuery, descriptionKey: "ServerState" },
+    { name: "Sanity", logo: SanityLogo, descriptionKey: "HeadlessCMS" },
+    { name: "NodeJs", logo: NodeLogo, descriptionKey: "Enviroment" },
   ];
   const isMobile = useMobile();
 
   return (
     <div id="techStack" className="flex flex-col gap-6">
       <div className="w-full mb-9 flex flex-col gap-3">
-        <h1 className="text-4xl font-bold text-center">Tech Stack</h1>
+        <h1 className="text-4xl font-bold text-center">{t("techStack.sectionTitle")}</h1>
         <h3 className="text-base font-extralight text-center text-hard-gray dark:text-light-gray">
-          Explore the technologies and tools powering my projects.
+          {t("techStack.sectionSubtitle")}
         </h3>
       </div>
       {isMobile ? (
@@ -113,14 +60,14 @@ function TechStack() {
                   inView
                 >
                   <div className="flex flex-1 justify-center items-center ">
-                    <img src={tech.logo} className="mt-6" alt="React" />
+                    <img src={tech.logo} className="mt-6" alt={tech.name} />
                   </div>
                   <div className="w-full px-6 pb-6 flex justify-between items-center">
                     <div className="font-semibold text-onyx">
                       <p>{tech.name}</p>
                     </div>
                     <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                      <p>{tech.description}</p>
+                      <p>{t(`techStack.descriptions.${tech.descriptionKey}`)}</p>
                     </div>
                   </div>
                 </BlurFade>
@@ -130,7 +77,10 @@ function TechStack() {
         </div>
       ) : (
         <>
-          <MarqueeTech techData={TechStackArray} />
+          <MarqueeTech techData={TechStackArray.map(tech => ({
+            ...tech,
+            description: t(`techStack.descriptions.${tech.descriptionKey}`),
+          }))} />
         </>
       )}
     </div>

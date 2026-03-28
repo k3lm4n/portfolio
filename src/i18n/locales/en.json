@@ -1,0 +1,103 @@
+{
+  "navbar": {
+    "about": "About",
+    "timeline": "Timeline",
+    "techStack": "Tech Stack",
+    "collaborations": "Collaborations",
+    "getInTouch": "Get in Touch"
+  },
+  "about": {
+    "greeting": "Hello World 👋",
+    "intro": "I'm",
+    "description": "A Full-stack Developer who loves turning ideas into reality. Whether on the front-end or back-end, I focus on seamless and beautiful solutions. With a passion for continuous learning and creative problem-solving, I strive to make a meaningful impact through technology.",
+    "resume": "See my resume",
+    "getInTouch": "Get in touch"
+  },
+  "experience": {
+    "sectionTitle": "Timeline",
+    "sectionSubtitle": "A journey through my career highlights, showcasing key milestones, projects, and accomplishments.",
+    "items": {
+      "teamit": {
+        "title": "Full-stack Developer",
+        "date": "April 2025 - Present"
+      },
+      "tsco": {
+        "title": "Full-stack Developer",
+        "date": "September 2023 - April 2025"
+      },
+      "horizon": {
+        "title": "Full-stack Developer",
+        "date": "January 2024 - June 2024"
+      },
+      "cbs": {
+        "title": "Software Developer and Manager",
+        "date": "September 2022 - September 2023"
+      },
+      "hestia": {
+        "title": "Full-stack Developer",
+        "date": "July 2021 - July 2022"
+      },
+      "isptec": {
+        "title": "Bachelor of Science",
+        "subtitle": "Computer Engineering",
+        "date": "March 2018 - October 2023"
+      }
+    }
+  },
+  "techStack": {
+    "sectionTitle": "Tech Stack",
+    "sectionSubtitle": "Explore the technologies and tools powering my projects.",
+    "descriptions": {
+      "Framework": "Framework",
+      "Language": "Language",
+      "CSSLibrary": "CSS Library",
+      "Validator": "Validator",
+      "ORM": "ORM",
+      "GlobalState": "Global State",
+      "Library": "Library",
+      "Deployment": "Deployment",
+      "ServerState": "Server State",
+      "HeadlessCMS": "Headless CMS",
+      "Enviroment": "Environment"
+    }
+  },
+  "projects": {
+    "sectionTitle": "Projects",
+    "sectionSubtitle": "Explore my projects and contributions, showcasing where I've worked and the impact I've made.",
+    "messierNotes": {
+      "name": "Messier Notes",
+      "description": "Messier Notes is a productivity tool, offering task management, note-taking, and collaboration in one seamless platform."
+    },
+    "kaleAcquisition": {
+      "name": "Kale-acquisition",
+      "description": "Worked on a landing page for a platform that helps recruiting companies eliminate manual prospecting and research, streamlining outreach through automation and efficiency."
+    },
+    "smoothPlayer": {
+      "name": "Smooth Player",
+      "description": "Smooth Player is a sleek Spotify clone with playlist management, song search, and a responsive design for seamless music streaming."
+    },
+    "venator": {
+      "name": "Venator",
+      "description": "Venator is an AI-powered inbox integrated with LinkedIn and Email, designed to identify and engage potential clients, streamlining prospecting and outreach."
+    },
+    "socialMate": {
+      "name": "Social Mate",
+      "description": "Social Mate is a web platform designed to help students share information, collaborate, and communicate effectively to achieve better results in tests."
+    }
+  },
+  "getInTouch": {
+    "title": "Let's work together",
+    "subtitle": "Want to discuss an opportunity to create something great? I'm ready when you are.",
+    "button": "Get in touch"
+  },
+  "footer": {
+    "thanks": "Thanks for stopping by!",
+    "copyright": "©2024 Kelman Dias dos Santos. All Rights Reserved.",
+    "links": "Links",
+    "elsewhere": "Social Media",
+    "about": "About",
+    "timeline": "Timeline",
+    "techStack": "Tech Stack",
+    "getInTouch": "Get in touch"
+  }
+}

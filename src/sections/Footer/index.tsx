@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
     e.preventDefault();
@@ -17,33 +20,33 @@ export default function Footer() {
         <div className="h-full w-full">
           <div className="w-24 h-24"></div>
           <div className="flex items-center h-full text-l  font-black">
-            Thanks for stopping by!
+            {t("footer.thanks")}
           </div>
         </div>
         <div className="flex h-full w-full text-xs font-thin">
-          ©2024 Kelman Dias dos Santos. All Rights Reserved.
+          {t("footer.copyright")}
         </div>
       </div>
       <div className="lg:w-[30%] w-full h-full flex flex-col gap-4 md:flex-row justify-between ">
         <div className="flex flex-col ">
-          <span className="mb-8 font-bold">Links</span>
+          <span className="mb-8 font-bold">{t("footer.links")}</span>
           <div className="flex flex-col gap-4 text-sm font-light w-full ">
             <a href="#about" onClick={() => handleScroll}>
-              About
+              {t("footer.about")}
             </a>
             <a href="#experience" onClick={() => handleScroll}>
-              Timeline
+              {t("footer.timeline")}
             </a>
             <a href="#techStack" onClick={() => handleScroll}>
-              Tech Stack
+              {t("footer.techStack")}
             </a>
             <a href="#getInTouch" onClick={() => handleScroll}>
-              Get in touch
+              {t("footer.getInTouch")}
             </a>
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="mb-8 font-bold">Elsewhere</span>
+          <span className="mb-8 font-bold">{t("footer.elsewhere")}</span>
           <div className="flex flex-col gap-4 justify-center text-sm font-light">
             <a href="mailto:kelmandossantos@gmail.com">Email</a>
             <a

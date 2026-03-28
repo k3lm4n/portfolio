@@ -20,6 +20,7 @@ export { default as TSCOLogo } from "./Logos/logo-tsco.png";
 export { default as HorizonLogo } from "./Logos/horizon.png";
 export { default as ISPTECLogo } from "./Logos/Isptec-logo.png";
 export { default as CBSLogo } from "./Logos/CBSLOGO.png";
+export { default as TeamItLogo } from "./Logos/TeamIt.png";
 
 //Tools
 export { default as ReactLogo } from "./Tools/ReactIcon.svg";
@@ -48,3 +49,7 @@ export { default as AboutDarkSVG } from "./dark/User.svg";
 export { default as ExperienceDarkSVG } from "./dark/Bag.svg";
 export { default as TechStackDarkSVG } from "./dark/Stack.svg";
 export { default as GetInTouchDarkSVG } from "./dark/Send.svg";
+
+
+//
+export { default as HeroImage } from "./hero_img.png";

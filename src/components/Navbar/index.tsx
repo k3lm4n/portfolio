@@ -24,10 +24,25 @@ import {
 } from "../ui/navigation-menu";
 import useTablet from "@/hooks/useTablet";
 import useDarkMode, { useAppTheme } from "@/hooks/useDarkMode";
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
 export const Navbar = () => {
   const { setDarkMode } = useDarkMode();
   const { appTheme } = useAppTheme();
+  const { t, i18n: i18nInstance } = useTranslation();
+
+  const currentLang = i18nInstance.language?.startsWith("pt") ? "pt" : "en";
+  const toggleLang = () =>
+    i18n.changeLanguage(currentLang === "en" ? "pt" : "en");
+
+  const links = [
+    { name: t("navbar.about"), href: "#about" },
+    { name: t("navbar.timeline"), href: "#experiences" },
+    { name: t("navbar.techStack"), href: "#techStack" },
+    { name: t("navbar.collaborations"), href: "#collaborations" },
+    { name: t("navbar.getInTouch"), href: "#getInTouch" },
+  ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // first prevent the default behavior
@@ -51,10 +66,10 @@ export const Navbar = () => {
   const isTablet = useTablet();
   return isTablet ? (
     <>
-      <div className="mx-auto flex items-center justify-center w-full h-full z-20">
-        <NavigationMenu className="fixed w-[85%] flex h-16 dark:bg-[#18181D/25] bg-onyx/25 backdrop-blur-3xl items-center justify-center  rounded-xl border-white/30 bottom-5 border">
+      <div className="mx-auto  flex items-center justify-center w-full h-full z-20">
+        <NavigationMenu className="fixed  w-[85%] flex h-16 dark:bg-[#18181D/25] bg-onyx/25 backdrop-blur-3xl items-center justify-center  rounded-xl border-white/30 bottom-5 border ">
           <NavigationMenuList className=" flex items-center ">
-            <div className="flex w-full justify-center items-center gap-8 ">
+            <div className="flex w-full justify-center items-center gap-5">
               <NavigationMenuItem className="cursor-pointer w-7 h-7">
                 <a href="#about" onClick={() => handleScroll}>
                   {appTheme ? (
@@ -104,89 +119,107 @@ export const Navbar = () => {
                   <img src={MoonSVG} alt="Moon" />
                 )}
               </NavigationMenuItem>
+              <NavigationMenuItem
+                className="cursor-pointer text-lg font-bold uppercase tracking-widest dark:text-white border border-dark-gray/25 px-2 rounded"
+                onClick={toggleLang}
+              >
+                {currentLang === "en" ? "PT" : "EN"}
+              </NavigationMenuItem>
             </div>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
     </>
   ) : (
-    <div className="mx-auto flex items-center justify-center  h-full">
-      <NavigationMenu className="fixed w-[80%] flex  justify-between h-16 dark:bg-onyx/25 bg-white/30 backdrop-blur-3xl dark:text-light-gray  rounded-xl border-white/30 top-5 border">
-        <NavigationMenuList className="px-4 flex gap-10 ">
-          <NavigationMenuItem className="cursor-pointer">
-            <a href="#about" onClick={() => handleScroll}>
-              About
-            </a>
-          </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer">
-            <a href="#experiences" onClick={() => handleScroll}>
-              Timeline
-            </a>
-          </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer">
-            <a href="#techStack" onClick={() => handleScroll}>
-              Tech Stack
-            </a>
-          </NavigationMenuItem>
-          <NavigationMenuItem className="cursor-pointer">
-            <a href="#getInTouch" onClick={() => handleScroll}>
-              Get in Touch
-            </a>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-        <NavigationMenuList className="flex gap-6 px-5">
-          <NavigationMenuItem
-            className="cursor-pointer"
-            onClick={() => window.open("https://github.com/k3lm4n", "_blank")}
-          >
-            {appTheme ? (
-              <img src={GitHubLightSVG} alt="GitHub" />
-            ) : (
-              <img src={GitHubSVG} alt="GitHub" />
-            )}
-          </NavigationMenuItem>
-          <NavigationMenuItem
-            className="cursor-pointer"
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/kelman-dias-dos-santos-812693185/",
-                "_blank"
-              )
-            }
-          >
-            {appTheme ? (
-              <img src={LinkedInLightSVG} alt="LinkedIn" />
-            ) : (
-              <img src={LinkedInSVG} alt="LinkedIn" />
-            )}
-          </NavigationMenuItem>
-          <NavigationMenuItem
-            className="cursor-pointer"
-            onClick={() =>
-              window.open(
-                "https://discord.com/users/826107786643243038",
-                "_blank"
-              )
-            }
-          >
-            {appTheme ? (
-              <img src={DiscordLightSVG} alt="Discord" />
-            ) : (
-              <img src={DiscordSVG} alt="Discord" />
-            )}
-          </NavigationMenuItem>
-          <span className="h-6 border border-dark-gray/25" />
-          <NavigationMenuItem
-            className="cursor-pointer"
-            onClick={() => setDarkMode(!appTheme)}
-          >
-            {appTheme ? (
-              <img src={SunSVG} alt="Sun" />
-            ) : (
-              <img src={MoonSVG} alt="Moon" />
-            )}
-          </NavigationMenuItem>
-        </NavigationMenuList>
+    <div className="flex items-center justify-center  h-full">
+      <NavigationMenu className="fixed w-[85%] flex  justify-between h-16 dark:bg-onyx/25 bg-white/30 backdrop-blur-3xl dark:text-light-gray  rounded-xl border-white/30 top-5 border">
+        <div className="w-full flex items-center">
+          <NavigationMenuList className="px-4 flex gap-4">
+            {links.map((link, index) => (
+              <NavigationMenuItem
+                key={index}
+                className="cursor-pointer text-nowrap"
+              >
+                <a href={link.href} onClick={() => handleScroll}>
+                  {link.name}
+                </a>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </div>
+        <div className="w-full flex items-center justify-end xl:px-8 px-4">
+          <NavigationMenuList className="flex gap-4">
+            <div className="hidden xl:flex gap-4">
+              <NavigationMenuItem
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open("https://github.com/k3lm4n", "_blank")
+                }
+              >
+                {appTheme ? (
+                  <img src={GitHubLightSVG} className="h-7 w-7" alt="GitHub" />
+                ) : (
+                  <img src={GitHubSVG} className="h-7 w-7" alt="GitHub" />
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/kelman-dias-dos-santos-812693185/",
+                    "_blank",
+                  )
+                }
+              >
+                {appTheme ? (
+                  <img
+                    src={LinkedInLightSVG}
+                    className="h-7 w-7"
+                    alt="LinkedIn"
+                  />
+                ) : (
+                  <img src={LinkedInSVG} className="h-7 w-7" alt="LinkedIn" />
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://discord.com/users/826107786643243038",
+                    "_blank",
+                  )
+                }
+              >
+                {appTheme ? (
+                  <img
+                    src={DiscordLightSVG}
+                    className="h-7 w-7"
+                    alt="Discord"
+                  />
+                ) : (
+                  <img src={DiscordSVG} className="h-7 w-7" alt="Discord" />
+                )}
+              </NavigationMenuItem>
+              <span className="h-6 border border-dark-gray/25" />
+              <NavigationMenuItem
+                className="cursor-pointer"
+                onClick={() => setDarkMode(!appTheme)}
+              >
+                {appTheme ? (
+                  <img src={SunSVG} className="h-7 w-7" alt="Sun" />
+                ) : (
+                  <img src={MoonSVG} className="h-7 w-7" alt="Moon" />
+                )}
+              </NavigationMenuItem>
+            </div>
+            <NavigationMenuItem
+              className="cursor-pointer text-lg font-bold uppercase tracking-widest dark:text-white border border-dark-gray/25 px-2 rounded"
+              onClick={toggleLang}
+            >
+              {currentLang === "en" ? "PT" : "EN"}
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </div>
       </NavigationMenu>
     </div>
   );

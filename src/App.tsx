@@ -4,7 +4,7 @@ import { Navbar } from "./components/Navbar";
 import Footer from "./sections/Footer";
 import Experience from "./sections/Experience";
 import GetInTouch from "./sections/GetInTouch";
-import TechStack from "./sections/TechStack";
+// import TechStack from "./sections/TechStack";
 import { Analytics } from "@vercel/analytics/react";
 import ProjectsContrib from "./sections/ProjectsAndContribuitions";
 
@@ -21,7 +21,7 @@ function App() {
         <ProjectsContrib/>
       </Container>
       <Container className="pt-8">
-        <TechStack />
+        {/* <TechStack /> */}
         <GetInTouch />
       </Container>
       <Container className="bg-footer">
