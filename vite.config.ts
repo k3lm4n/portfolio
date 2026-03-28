@@ -9,6 +9,9 @@ export default defineConfig({
       usePolling: true
     }
   },
+  preview:{
+    allowedHosts:["k3lm4n.paradis.host"]
+  },
   plugins: [react({
     include:"**/*.tsx"
   })],
