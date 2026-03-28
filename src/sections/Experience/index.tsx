@@ -90,7 +90,7 @@ function Experience() {
     },
     {
       title: "experience.items.isptec.title",
-      subtitle: "experience.items.isptec.subtitle",
+      subtitle: t("experience.items.isptec.subtitle"),
       date: t("experience.items.isptec.date"),
       location: "ISPTEC - Luanda, AO",
       logo: ISPTECLogo,
