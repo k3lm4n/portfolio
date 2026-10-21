@@ -1,262 +1,258 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-  @media (width >= --theme(--breakpoint-sm)) {
-    max-width: none;
-  }
-  @media (width >= 1400px) {
-    max-width: 1400px;
-  }
+/* Design tokens (canvas "Portfólio Kelman Santos") */
+:root {
+  --bg: #f2f4fa;
+  --surface: #ffffff;
+  --line: #e1e5ee;
+  --fg: #0f172a;
+  --muted: #556074;
+  --faint: #8a93a6;
+  --chip: #334155;
+  --chip-bg: #eef1f7;
+  --nav: rgba(255, 255, 255, 0.62);
+  --nav-line: rgba(255, 255, 255, 0.9);
+  --btn-bg: #0f172a;
+  --btn-text: #ffffff;
+  --btn2-bg: #e4e8f0;
+  --thumb: #e9edf5;
+  --cta-bg: #0f172a;
+  --cta-text: #f8fafc;
+  --cta-muted: #b4bdcc;
+  --cta-btn-bg: #ffffff;
+  --cta-btn-text: #0f172a;
+  --glow:
+    radial-gradient(42% 520px at 28% 0%, rgba(160, 166, 240, 0.55), transparent 75%),
+    radial-gradient(36% 480px at 58% 0%, rgba(246, 178, 160, 0.55), transparent 75%);
+}
+
+.dark {
+  --bg: #0b1020;
+  --surface: #121829;
+  --line: #222a3e;
+  --fg: #e8ecf5;
+  --muted: #9aa3b8;
+  --faint: #6b7489;
+  --chip: #c9d0de;
+  --chip-bg: #1a2236;
+  --nav: rgba(18, 24, 41, 0.62);
+  --nav-line: rgba(255, 255, 255, 0.08);
+  --btn-bg: #e8ecf5;
+  --btn-text: #0b1020;
+  --btn2-bg: #1c2438;
+  --thumb: #171e31;
+  --cta-bg: #e8ecf5;
+  --cta-text: #0b1020;
+  --cta-muted: #465066;
+  --cta-btn-bg: #0b1020;
+  --cta-btn-text: #e8ecf5;
+  --glow:
+    radial-gradient(42% 520px at 28% 0%, rgba(99, 102, 241, 0.3), transparent 75%),
+    radial-gradient(36% 480px at 58% 0%, rgba(244, 140, 120, 0.22), transparent 75%);
 }
 
 @theme inline {
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-
-  /* inline so --speed/--duration resolve on the element, not on :root */
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-  --animate-slide: slide var(--speed) ease-in-out infinite alternate;
-  --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-chip: var(--chip);
+  --color-chip-bg: var(--chip-bg);
+  --color-nav: var(--nav);
+  --color-nav-line: var(--nav-line);
+  --color-btn-bg: var(--btn-bg);
+  --color-btn-text: var(--btn-text);
+  --color-btn2-bg: var(--btn2-bg);
+  --color-thumb: var(--thumb);
+  --color-cta-bg: var(--cta-bg);
+  --color-cta-text: var(--cta-text);
+  --color-cta-muted: var(--cta-muted);
+  --color-cta-btn-bg: var(--cta-btn-bg);
+  --color-cta-btn-text: var(--cta-btn-text);
 }
 
 @theme {
-  --color-black: #0d0d0d;
-  --color-white: #ffffff;
-  --color-onyx: #181818;
-  --color-dark-gray: #808080;
-  --color-hard-gray: #303030;
-  --color-medium-gray: rgba(128, 128, 128, 0.5);
-  --color-light-gray: #c5c5c5;
-  --color-light-blue: rgba(63, 100, 234, 0.43);
-  --color-light-red: rgba(233, 63, 64, 0.43);
-  --color-light-yellow: rgba(255, 184, 0, 0.43);
-  --color-primary-color: #f1f4fc;
-
-  @keyframes spin-around {
-    0% {
-      transform: translateZ(0) rotate(0);
-    }
-    15%,
-    35% {
-      transform: translateZ(0) rotate(90deg);
-    }
-    65%,
-    85% {
-      transform: translateZ(0) rotate(270deg);
-    }
-    100% {
-      transform: translateZ(0) rotate(360deg);
-    }
-  }
-  @keyframes slide {
-    to {
-      transform: translate(calc(100cqw - 100%), 0);
-    }
-  }
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-  @keyframes marquee-vertical {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(calc(-100% - var(--gap)));
-    }
-  }
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --breakpoint-nav: 900px;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@keyframes rise {
+  from { opacity: 0; translate: 0 24px; filter: blur(6px); }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
+}
+@keyframes drop {
+  from { opacity: 0; translate: 0 -16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes reveal {
+  from { opacity: 0; translate: 0 40px; scale: 0.98; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(34, 160, 107, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(34, 160, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 160, 107, 0); }
+}
+@keyframes glow {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 60px 30px, -50px 20px; }
+}
+@keyframes menu {
+  from { opacity: 0; translate: 0 -8px; scale: 0.98; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-@layer utilities {
-  .dark-mode-transition {
-    @apply transition-colors duration-500;
-  }
-
-  .bg-footer {
-    background-image: url('./assets/footergradient.svg');
-    background-size: cover; /* <------ */
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  .bg-header {
-    background-image: url('./assets/headergradient.svg');
-    background-size: cover; /* <------ */
-    background-repeat: no-repeat;
-    background-position: center center;
+    border-color: var(--line);
   }
 
   html {
     scroll-behavior: smooth;
   }
-}
 
-
-@layer base {
-  html {
-    font-family: Inter;
-  }
-
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-
-    /* Name: custom color palette
-       Author: Ilias Ism
-       URL: https://gradient.page */
-
-    /* CSS: .bg-gradient { background: var(--gradient) } */
-    --gradient: linear-gradient(to top left, #24c6dc, #514a9d);
-
-    --background: 199 47.449999999999996% 4%;
-    --foreground: 199 7.3% 97.5%;
-
-    --muted: 199 36.5% 15%;
-    --muted-foreground: 199 7.3% 55%;
-
-    --popover: 199 50.4% 6.5%;
-    --popover-foreground: 199 7.3% 97.5%;
-
-    --card: 199 50.4% 6.5%;
-    --card-foreground: 199 7.3% 97.5%;
-
-    --border: 199 36.5% 15%;
-    --input: 199 36.5% 15%;
-
-    --primary: 199 73% 50%;
-    --primary-foreground: 199 7.3% 5%;
-
-    --secondary: 199 36.5% 15%;
-    --secondary-foreground: 199 7.3% 97.5%;
-
-    --accent: 199 36.5% 15%;
-    --accent-foreground: 199 7.3% 97.5%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 199 7.3% 97.5%;
-
-    --ring: 199 73% 50%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  a:hover {
+    opacity: 0.72;
+  }
+
+  button {
+    transition: transform 0.2s ease, opacity 0.2s;
+  }
+  button:active {
+    transform: scale(0.94);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
   }
 }
 
+@layer components {
+  .page-glow {
+    background-image: var(--glow);
+    background-repeat: no-repeat;
+    animation: glow 16s ease-in-out infinite alternate;
+    transition: background-color 0.3s, color 0.3s;
+  }
 
+  .header-drop {
+    animation: drop 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .hero-in > * {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-in > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-in > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-in > *:nth-child(3) { animation-delay: 0.32s; }
+  .hero-in > *:nth-child(4) { animation-delay: 0.44s; }
+
+  .pulse-dot {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  .menu-in {
+    animation: menu 0.22s ease-out both;
+  }
+
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-link:hover {
+    opacity: 1;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
+  }
+  .btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(15, 23, 41, 0.18);
+  }
+  .btn svg {
+    transition: transform 0.2s ease;
+  }
+  .btn:hover svg {
+    transform: translateX(3px);
+  }
+
+  .card {
+    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(15, 23, 41, 0.12);
+  }
+  .card .card-arrow {
+    transition: transform 0.2s ease;
+  }
+  .card:hover .card-arrow {
+    transform: translate(2px, -2px);
+  }
+
+  .xp-row {
+    transition: padding-left 0.3s ease;
+  }
+  .xp-row:hover {
+    padding-left: 8px;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
