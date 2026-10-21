@@ -33,7 +33,7 @@ export default function useDarkMode() {
     localStorage.setItem(localStorageKeys.THEME, darkMode ? "dark" : "light");
     setAppTheme(darkMode);
     document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
+  }, [darkMode, setAppTheme]);
 
   return { darkMode, setDarkMode };
 }

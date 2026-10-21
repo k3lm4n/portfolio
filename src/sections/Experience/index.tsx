@@ -15,13 +15,14 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { useAppTheme } from "@/hooks/useDarkMode";
 import { useTranslation } from "react-i18next";
+import type { ParseKeys } from "i18next";
 
 function Experience() {
   const { appTheme } = useAppTheme();
   const { t } = useTranslation();
 
   type TimelineItem = {
-    title: string;
+    title: ParseKeys;
     date: string;
     subtitle: string;
     location: string;
@@ -149,7 +150,7 @@ function Experience() {
                   </div>
                   <div className="">
                     <span className="vertical-timeline-element-title font-bold ">
-                      {t(item.title as any)}
+                      {t(item.title)}
                     </span>
                     <div className="flex flex-col gap-4">
                       <p className="vertical-timeline-element-subtitle font-light! text-sm! -mt-1! ">

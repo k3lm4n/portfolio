@@ -49,12 +49,12 @@ export const Navbar = () => {
     e.preventDefault();
     // get the href and remove everything before the hash (#)
     const { href } = e.currentTarget;
-    const targetId = href.replace(/.*\#/, "");
+    const targetId = href.replace(/.*#/, "");
     // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
-    var headerOffset = 100;
-    var elementPosition = elem!.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    const headerOffset = 100;
+    const elementPosition = elem!.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
     console.log("Element:", elem);
     elem?.scrollTo({

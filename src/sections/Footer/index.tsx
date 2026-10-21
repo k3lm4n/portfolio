@@ -6,7 +6,7 @@ export default function Footer() {
     // first prevent the default behavior
     e.preventDefault();
     const { href } = e.currentTarget;
-    const targetId = href.replace(/.*\#/, "");
+    const targetId = href.replace(/.*#/, "");
     const elem = document.getElementById(targetId);
     elem?.scrollIntoView({
       behavior: "smooth",
@@ -63,7 +63,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              onClick={(e: any) => {
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault();
                 window.open("https://github.com/k3lm4n", "_blank");
               }}
@@ -72,7 +72,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              onClick={(e: any) => {
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault();
                 window.open(
                   "https://discord.com/users/826107786643243038",
