@@ -2,9 +2,7 @@
 
 ## Purpose
 Definir os metadados que motores de busca e crawlers sociais leem no HTML estático (título, description, canonical, Open Graph, Twitter, JSON-LD, theme-color), o robots.txt, o sitemap.xml e a troca de título e description por idioma. Criado pela change improve-seo-and-favicon e alterado pela localized-og-pages.
-
 ## Requirements
-
 ### Requirement: Metadados no HTML estático
 Cada página de idioma servida SHALL conter no `<head>`, sem depender de JavaScript, um único `<title>`, uma `<meta name="description">` e um `<link rel="canonical">`, com a marca "Kelman Santos". A página `/` SHALL estar em inglês (`<html lang="en">`), com o canonical `https://k3lm4n.paradis.host/`. A página `/pt/` SHALL estar em português (`<html lang="pt-PT">`), com o canonical `https://k3lm4n.paradis.host/pt/`. O título e a description de cada página MUST ser iguais a `meta.title` e `meta.description` do locale correspondente.
 
@@ -36,11 +34,11 @@ O `<head>` de cada página de idioma SHALL declarar Open Graph (`og:type` `websi
 - **THEN** cada resposta é `200` com `Content-Type: image/png`, e cada imagem tem 1200×630 px e menos de 300 KB
 
 ### Requirement: Dados estruturados Person
-O `<head>` SHALL incluir um `<script type="application/ld+json">` com um objeto schema.org `Person` que tenha `name` "Kelman Santos", `alternateName` "k3lm4n", `jobTitle` "Full-stack Developer", `url` `https://k3lm4n.paradis.host/`, `address` com `addressLocality` "Lisbon" e `addressCountry` "PT", e `sameAs` com os URLs de GitHub e LinkedIn de `src/contants/links.ts`.
+O `<head>` SHALL incluir um `<script type="application/ld+json">` com um objeto schema.org `Person` que tenha `name` "Kelman Santos", `alternateName` "k3lm4n", `jobTitle` "Full-stack Developer", `url` `https://k3lm4n.paradis.host/` e `sameAs` com os URLs de GitHub e LinkedIn de `src/contants/links.ts`. O objeto MUST NOT ter `address`, `homeLocation` nem outro campo de localização.
 
 #### Scenario: Validação de dados estruturados
 - **WHEN** se passa o HTML pelo Schema Markup Validator (validator.schema.org)
-- **THEN** é detetada uma entidade `Person` sem erros e com os campos acima
+- **THEN** é detetada uma entidade `Person` sem erros, com os campos acima e sem `address`
 
 ### Requirement: Cor do tema do browser
 O `<head>` SHALL declarar `<meta name="theme-color">` com `#f2f4fa` para `(prefers-color-scheme: light)` e `#0b1020` para `(prefers-color-scheme: dark)`, os valores de `--bg` de cada tema.
@@ -88,3 +86,19 @@ O idioma ativo SHALL ser determinado primeiro pelo path (`/pt/` → pt, qualquer
 #### Scenario: Acesso direto ao path PT
 - **WHEN** se faz `GET /pt/` e `GET /pt` no `vite preview` e no Firebase Hosting
 - **THEN** ambos servem o HTML de `dist/pt/index.html`, ou `/pt` redireciona para `/pt/`, e os assets JS e CSS carregam com `200`
+
+### Requirement: Copy dos metadados
+Em cada locale, `meta.title` SHALL conter "Kelman Santos" e o alias "k3lm4n". `meta.description` SHALL ter entre 70 e 160 caracteres, MUST NOT começar por "Kelman Santos" e SHALL referir os anos de experiência e a stack principal (React, Next.js, Node.js e GraphQL). Nem o título, nem a description, nem o `og:image:alt` MUST mencionar uma cidade ou um país, em nenhum locale.
+
+#### Scenario: Título com alias
+- **WHEN** se lê o `<title>` de `dist/index.html` e de `dist/pt/index.html`
+- **THEN** ambos contêm "Kelman Santos" e "k3lm4n"
+
+#### Scenario: Description não repete o título
+- **WHEN** se lê `meta.description` em `en.json` e `pt.json`
+- **THEN** nenhuma começa por "Kelman Santos", cada uma tem 70 a 160 caracteres e ambas referem React, Next.js, Node.js e GraphQL
+
+#### Scenario: Sem localização
+- **WHEN** se procuram "Lisbon", "Lisboa", "Portugal" e "PT" como país no `<head>` de `dist/index.html` e `dist/pt/index.html` (título, metas e JSON-LD)
+- **THEN** não há resultados
+
