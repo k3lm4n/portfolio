@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://k3lm4n.paradis.host/sitemap.xml

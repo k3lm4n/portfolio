@@ -1,12 +1,17 @@
 {
   "hosting": {
     "public": "dist",
+    "trailingSlash": true,
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [
+      {
+        "source": "/pt/**",
+        "destination": "/pt/index.html"
+      },
       {
         "source": "**",
         "destination": "/index.html"
