@@ -78,17 +78,19 @@
   --color-ok-text: var(--ok-text);
   --color-lock-bg: var(--lock-bg);
   --color-lock-text: var(--lock-text);
-}
 
-@theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --breakpoint-nav: 900px;
-
+  /* Inline because --speed/--duration are set on the button itself:
+     declared on :root they would resolve there, undefined, and the animation would not run */
   /* Magic UI · Shimmer Button */
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
   /* Magic UI · Pulsating Button */
   --animate-pulsate: pulsate var(--duration) ease-out infinite;
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --breakpoint-nav: 900px;
 
   @keyframes shimmer-slide {
     to { transform: translate(calc(100cqw - 100%), 0); }
@@ -106,16 +108,14 @@
   }
 }
 
-/* Magic UI · Blur Fade, in CSS.
-   Ends on `none`, not blur(0): with fill-mode both a leftover filter keeps the text
-   on a composited layer, which mobile browsers rasterize blurry */
+/* Magic UI · Blur Fade, in CSS */
 @keyframes rise {
   from { opacity: 0; translate: 0 6px; filter: blur(6px); }
-  to { opacity: 1; translate: none; filter: none; }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
 }
 @keyframes reveal {
   from { opacity: 0; translate: 0 12px; filter: blur(6px); }
-  to { opacity: 1; translate: none; filter: none; }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
 }
 @keyframes drop {
   from { opacity: 0; translate: 0 -16px; }

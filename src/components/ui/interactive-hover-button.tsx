@@ -9,7 +9,8 @@ export function InteractiveHoverButton(props: PressableProps) {
     <Pressable
       {...props}
       className={cn(
-        "group relative inline-flex h-[50px] min-w-[168px] cursor-pointer items-center justify-center overflow-hidden rounded-full border border-line px-6 text-[15px] font-medium text-fg",
+        // clip-path: iOS Safari ignores overflow-hidden + radius for the scaled dot
+        "group relative isolate inline-flex h-[50px] min-w-[168px] cursor-pointer items-center justify-center overflow-hidden [clip-path:inset(0_round_9999px)] rounded-full border border-line px-6 text-[15px] font-medium text-fg",
         props.className,
       )}
     >
