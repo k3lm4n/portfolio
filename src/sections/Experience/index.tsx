@@ -29,7 +29,7 @@ function Experience() {
     logo: string;
     width: number;
     type: "work" | "education";
-    icon: JSX.Element;
+    icon: React.JSX.Element;
   };
 
   const timelineItems: TimelineItem[] = [
@@ -132,6 +132,9 @@ function Experience() {
                 iconStyle={{
                   background: appTheme ? "#696969" : "#181818",
                   color: "#fff",
+                  // v4 shrank the default icon ring; keep the v3 shadow
+                  boxShadow:
+                    "0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)",
                 }}
                 icon={item.icon}
               >
