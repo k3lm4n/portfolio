@@ -1,93 +1,65 @@
-import {
-  ExpoLogo,
-  ExpressLogo,
-  NextLogo,
-  NodeLogo,
-  PrismaLogo,
-  ReactHookFormLogo,
-  ReactLogo,
-  ReactQuery,
-  SanityLogo,
-  TailwindLogo,
-  TSLogo,
-  VercelLogo,
-  ZOdLogo,
-  ZustandLogo,
-} from "@/assets";
-import BlurFade from "@/components/magicui/blur-fade";
-import useMobile from "@/hooks/useMobile";
-import MarqueeTech from "@/components/Marquee";
 import { useTranslation } from "react-i18next";
-import type en from "@/i18n/locales/en.json";
+import { Chip } from "@/components/Chip";
+import { Section } from "@/components/Section";
 
-type DescriptionKey = keyof typeof en["techStack"]["descriptions"];
+const groups = [
+  {
+    id: "frontend",
+    techs: ["React", "Next.js", "HTML & CSS", "Tailwind CSS"],
+  },
+  {
+    id: "backend",
+    techs: [
+      "Node.js / Express",
+      "Django / FastAPI",
+      ".NET Core",
+      "GraphQL",
+      "REST APIs",
+    ],
+  },
+  {
+    id: "database",
+    techs: ["PostgreSQL", "PL/pgSQL", "MongoDB", "Elasticsearch"],
+  },
+  {
+    id: "cms",
+  techs: ["Directus", "Squidex", "WordPress", "Sanity.io", "Strapi"],
+  },
+  {
+    id: "devops",
+    techs: ["Docker", "Kubernetes", "GitOps", "CI/CD", "NGINX", "AKS", "AWS"],
+  },
+] as const;
 
-function TechStack() {
+export function TechStack() {
   const { t } = useTranslation();
 
-  const TechStackArray: { name: string; logo: string; descriptionKey: DescriptionKey }[] = [
-    { name: "React", logo: ReactLogo, descriptionKey: "Framework" },
-    { name: "Express", logo: ExpressLogo, descriptionKey: "Framework" },
-    { name: "Typescript", logo: TSLogo, descriptionKey: "Language" },
-    { name: "Tailwind", logo: TailwindLogo, descriptionKey: "CSSLibrary" },
-    { name: "Expo", logo: ExpoLogo, descriptionKey: "Framework" },
-    { name: "ZOD", logo: ZOdLogo, descriptionKey: "Validator" },
-    { name: "Prisma", logo: PrismaLogo, descriptionKey: "ORM" },
-    { name: "Zustand", logo: ZustandLogo, descriptionKey: "GlobalState" },
-    { name: "Next", logo: NextLogo, descriptionKey: "Framework" },
-    { name: "ReactHookForm", logo: ReactHookFormLogo, descriptionKey: "Library" },
-    { name: "Vercel", logo: VercelLogo, descriptionKey: "Deployment" },
-    { name: "TanStack", logo: ReactQuery, descriptionKey: "ServerState" },
-    { name: "Sanity", logo: SanityLogo, descriptionKey: "HeadlessCMS" },
-    { name: "NodeJs", logo: NodeLogo, descriptionKey: "Enviroment" },
-  ];
-  const isMobile = useMobile();
-
   return (
-    <div id="techStack" className="flex flex-col gap-6">
-      <div className="w-full mb-9 flex flex-col gap-3">
-        <h1 className="text-4xl font-bold text-center">{t("techStack.sectionTitle")}</h1>
-        <h3 className="text-base font-extralight text-center text-hard-gray dark:text-light-gray">
-          {t("techStack.sectionSubtitle")}
-        </h3>
-      </div>
-      {isMobile ? (
-        <div className="w-full flex justify-center">
-          <div className="w-[80%]">
-            <div className="h-full grid grid-flow-row sm:grid-cols-4  lg:grid-cols-6 sm:grid-rows-7 grid-rows-12 lg:grid-rows-5  gap-4 auto-cols-auto ">
-              {TechStackArray.map((tech, index) => (
-                <BlurFade
-                  className="col-span-2 h-64 rounded-3xl flex items-center flex-col justify-center bg-gray-200 dark:bg-gray-200/30"
-                  key={index}
-                  delay={0.25 + index * 0.05}
-                  inView
-                >
-                  <div className="flex flex-1 justify-center items-center ">
-                    <img src={tech.logo} className="mt-6" alt={tech.name} />
-                  </div>
-                  <div className="w-full px-6 pb-6 flex justify-between items-center">
-                    <div className="font-semibold text-onyx">
-                      <p>{tech.name}</p>
-                    </div>
-                    <div className="px-3 py-1 bg-slate-100 rounded-3xl font-light text-dark-gray text-center">
-                      <p>{t(`techStack.descriptions.${tech.descriptionKey}`)}</p>
-                    </div>
-                  </div>
-                </BlurFade>
+    <Section
+      id="stack"
+      title={t("stack.title")}
+      subtitle={t("stack.subtitle")}
+      className="pb-28"
+    >
+      <div className="grid grid-cols-4 gap-5 max-nav:grid-cols-2 max-[520px]:grid-cols-1">
+        {groups.map((group) => (
+          <div
+            key={group.id}
+            className="card reveal flex flex-col gap-4 rounded-[18px] border border-line bg-surface p-6"
+          >
+            <h3 className="m-0 text-xs font-medium tracking-[0.06em] text-muted uppercase">
+              {t(`stack.groups.${group.id}`)}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {group.techs.map((tech) => (
+                <Chip key={tech} size="md">
+                  {tech}
+                </Chip>
               ))}
             </div>
           </div>
-        </div>
-      ) : (
-        <>
-          <MarqueeTech techData={TechStackArray.map(tech => ({
-            ...tech,
-            description: t(`techStack.descriptions.${tech.descriptionKey}`),
-          }))} />
-        </>
-      )}
-    </div>
+        ))}
+      </div>
+    </Section>
   );
 }
-
-export default TechStack;
