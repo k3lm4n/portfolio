@@ -1,103 +1,135 @@
 {
-  "navbar": {
+  "nav": {
     "about": "About",
     "timeline": "Timeline",
-    "techStack": "Tech Stack",
-    "collaborations": "Collaborations",
-    "getInTouch": "Get in Touch"
+    "projects": "Projects",
+    "stack": "Tech Stack",
+    "contact": "Contact",
+    "primary": "Main",
+    "mobile": "Mobile menu",
+    "themeToDark": "Switch to dark mode",
+    "themeToLight": "Switch to light mode",
+    "switchLanguage": "Mudar idioma para português",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
-  "about": {
-    "greeting": "Hello World 👋",
+  "hero": {
+    "badge": "Full-stack Developer at TeamIt · Lisbon, PT",
     "intro": "I'm",
-    "description": "A Full-stack Developer who loves turning ideas into reality. Whether on the front-end or back-end, I focus on seamless and beautiful solutions. With a passion for continuous learning and creative problem-solving, I strive to make a meaningful impact through technology.",
-    "resume": "See my resume",
-    "getInTouch": "Get in touch"
-  },
-  "experience": {
-    "sectionTitle": "Timeline",
-    "sectionSubtitle": "A journey through my career highlights, showcasing key milestones, projects, and accomplishments.",
-    "items": {
-      "teamit": {
-        "title": "Full-stack Developer",
-        "date": "April 2025 - Present"
+    "description": "A Full-stack Developer who loves turning ideas into reality. Whether on the front-end or the back-end, I focus on elegant, functional solutions — with a passion for continuous learning and creative problem-solving.",
+    "contact": "Get in touch",
+    "projects": "See projects",
+    "facts": {
+      "years": {
+        "value": "5+",
+        "label": "years of professional experience"
       },
-      "tsco": {
-        "title": "Full-stack Developer",
-        "date": "September 2023 - April 2025"
+      "companies": {
+        "value": "5",
+        "label": "companies and product teams"
       },
-      "horizon": {
-        "title": "Full-stack Developer",
-        "date": "January 2024 - June 2024"
-      },
-      "cbs": {
-        "title": "Software Developer and Manager",
-        "date": "September 2022 - September 2023"
-      },
-      "hestia": {
-        "title": "Full-stack Developer",
-        "date": "July 2021 - July 2022"
-      },
-      "isptec": {
-        "title": "Bachelor of Science",
-        "subtitle": "Computer Engineering",
-        "date": "March 2018 - October 2023"
+      "countries": {
+        "value": "3",
+        "label": "countries · Portugal, Angola, USA"
       }
     }
   },
-  "techStack": {
-    "sectionTitle": "Tech Stack",
-    "sectionSubtitle": "Explore the technologies and tools powering my projects.",
-    "descriptions": {
-      "Framework": "Framework",
-      "Language": "Language",
-      "CSSLibrary": "CSS Library",
-      "Validator": "Validator",
-      "ORM": "ORM",
-      "GlobalState": "Global State",
-      "Library": "Library",
-      "Deployment": "Deployment",
-      "ServerState": "Server State",
-      "HeadlessCMS": "Headless CMS",
-      "Enviroment": "Environment"
+  "timeline": {
+    "title": "Timeline",
+    "subtitle": "A journey through my career highlights, with key milestones, projects and achievements.",
+    "education": "Education",
+    "items": {
+      "teamit": {
+        "date": "Apr 2025 — Present",
+        "role": "Full-stack Developer",
+        "place": "Lisbon, PT"
+      },
+      "tsco": {
+        "date": "Sep 2023 — Apr 2025",
+        "role": "Full-stack Developer",
+        "place": "Luanda, AO"
+      },
+      "horizon": {
+        "date": "Jan 2024 — Jun 2024",
+        "role": "Full-stack Developer",
+        "place": "Sheridan, WY, USA"
+      },
+      "cbs": {
+        "date": "Sep 2022 — Sep 2023",
+        "role": "Software Developer & Manager",
+        "place": "Luanda, AO"
+      },
+      "hestia": {
+        "date": "Jul 2021 — Jul 2022",
+        "role": "Full-stack Developer",
+        "place": "Luanda, AO"
+      },
+      "isptec": {
+        "date": "Mar 2018 — Oct 2023",
+        "role": "BSc in Computer Engineering",
+        "place": "Luanda, AO"
+      }
     }
   },
   "projects": {
-    "sectionTitle": "Projects",
-    "sectionSubtitle": "Explore my projects and contributions, showcasing where I've worked and the impact I've made.",
-    "messierNotes": {
-      "name": "Messier Notes",
-      "description": "Messier Notes is a productivity tool, offering task management, note-taking, and collaboration in one seamless platform."
-    },
-    "kaleAcquisition": {
-      "name": "Kale-acquisition",
-      "description": "Worked on a landing page for a platform that helps recruiting companies eliminate manual prospecting and research, streamlining outreach through automation and efficiency."
-    },
-    "smoothPlayer": {
-      "name": "Smooth Player",
-      "description": "Smooth Player is a sleek Spotify clone with playlist management, song search, and a responsive design for seamless music streaming."
-    },
-    "venator": {
-      "name": "Venator",
-      "description": "Venator is an AI-powered inbox integrated with LinkedIn and Email, designed to identify and engage potential clients, streamlining prospecting and outreach."
-    },
-    "socialMate": {
-      "name": "Social Mate",
-      "description": "Social Mate is a web platform designed to help students share information, collaborate, and communicate effectively to achieve better results in tests."
+    "title": "Projects",
+    "subtitle": "Explore my projects and contributions, showing where I've worked and the impact I've made.",
+    "view": "View project",
+    "paradis": "with Paradis Labs",
+    "items": {
+      "genesis": {
+        "name": "Génesis Sport Club",
+        "description": "Official site for the Angolan youth sports club, bilingual, with news, sports and membership sign-up."
+      },
+      "kitenda": {
+        "name": "Kitenda",
+        "description": "Calculator converting Kwanza to foreign currency for card top-ups, with up-to-date exchange rates."
+      },
+      "fichaSegura": {
+        "name": "Ficha Segura",
+        "description": "Simulator comparing term deposits across Angola's main banks."
+      },
+      "kale": {
+        "name": "Kale",
+        "description": "Landing page for a managed cold email service targeting local and SMB businesses."
+      },
+      "farwell": {
+        "name": "Farwell Angola",
+        "description": "Corporate site and portfolio for Farwell Angola."
+      }
     }
   },
-  "getInTouch": {
-    "title": "Let's work together",
+  "publicSector": {
+    "title": "Public sector",
+    "subtitle": "Systems and portals built for government institutions. Some are public; others are internal with restricted access.",
+    "badge": "Details available in interview",
+    "public": "Public access",
+    "restricted": "Restricted access",
+    "result": "Result"
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "subtitle": "The technologies I work with every day.",
+    "groups": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "database": "Databases",
+      "integrations": "Integrations",
+      "cms": "CMS",
+      "devops": "Cloud & DevOps"
+    }
+  },
+  "contact": {
+    "title": "Let's work together!",
     "subtitle": "Want to discuss an opportunity to create something great? I'm ready when you are.",
-    "button": "Get in touch"
+    "schedule": "Book a call",
+    "email": "Send an email"
   },
   "footer": {
     "thanks": "Thanks for stopping by!",
-    "copyright": "©2024 Kelman Dias dos Santos. All Rights Reserved.",
+    "tagline": "Kelman Santos · Full-stack Developer",
     "links": "Links",
-    "elsewhere": "Social Media",
-    "about": "About",
-    "timeline": "Timeline",
-    "techStack": "Tech Stack",
-    "getInTouch": "Get in touch"
+    "social": "Social Media",
+    "copyright": "©2026 Kelman Dias dos Santos. All rights reserved."
   }
 }

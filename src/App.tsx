@@ -1,32 +1,24 @@
-import { Container } from "@/components/Container";
-import { About } from "./sections/About";
-import { Navbar } from "./components/Navbar";
-import Footer from "./sections/Footer";
-import Experience from "./sections/Experience";
-import GetInTouch from "./sections/GetInTouch";
-// import TechStack from "./sections/TechStack";
 import { Analytics } from "@vercel/analytics/react";
-import ProjectsContrib from "./sections/ProjectsAndContribuitions";
-
+import { Header } from "./components/Header";
+import { Hero } from "./sections/Hero";
+import { Timeline } from "./sections/Timeline";
+import { Projects } from "./sections/Projects";
+import { TechStack } from "./sections/TechStack";
+import { Contact } from "./sections/Contact";
+import { Footer } from "./sections/Footer";
 
 function App() {
   return (
-    <div className=" w-full h-full bg-primary-color dark:bg-onyx dark-mode-transition">
-      <Container className="bg-header relative">
-        <Navbar />
-        <About />
-      </Container>
-      <Container className="px-4 relative">
-        <Experience />
-        <ProjectsContrib/>
-      </Container>
-      <Container className="pt-8">
-        {/* <TechStack /> */}
-        <GetInTouch />
-      </Container>
-      <Container className="bg-footer">
-        <Footer />
-      </Container>
+    <div className="page-glow min-h-screen bg-bg text-fg">
+      <Header />
+      <main>
+        <Hero />
+        <Timeline />
+        <Projects />
+        <TechStack />
+        <Contact />
+      </main>
+      <Footer />
       <Analytics />
     </div>
   );

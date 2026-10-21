@@ -31,4 +31,9 @@ i18n
     },
   });
 
+// Keep <html lang> in sync so assistive tech reads the page in the right language
+i18n.on("languageChanged", (lng) => {
+  document.documentElement.lang = lng;
+});
+
 export default i18n;

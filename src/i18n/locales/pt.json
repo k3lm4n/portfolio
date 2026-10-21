@@ -1,103 +1,135 @@
 {
-    "navbar": {
-        "about": "Sobre",
-        "timeline": "Timeline",
-        "techStack": "Tech Stack",
-        "collaborations": "Colaborações",
-        "getInTouch": "Contacto"
-    },
-    "about": {
-        "greeting": "Oi Mundo 👋",
-        "intro": "Sou o",
-        "description": "Um Dev Full-stack que adora transformar ideias em realidade. Tanto no front-end como no back-end, foco-me em soluções elegantes e funcionais. Com paixão pela aprendizagem contínua e resolução criativa de problemas, procuro causar um impacto real através da tecnologia.",
-        "resume": "Ver o meu currículo",
-        "getInTouch": "Entre em contacto"
-    },
-    "experience": {
-        "sectionTitle": "Timeline",
-        "sectionSubtitle": "Uma jornada pelos destaques da minha carreira, apresentando marcos importantes, projetos e conquistas.",
-        "items": {
-            "teamit": {
-                "title": "Full-stack Developer",
-                "date": "Abril 2025 - Presente"
-            },
-            "tsco": {
-                "title": "Full-stack Developer",
-                "date": "Setembro 2023 - Abril 2025"
-            },
-            "horizon": {
-                "title": "Full-stack Developer",
-                "date": "Janeiro 2024 - Junho 2024"
-            },
-            "cbs": {
-                "title": "Software Developer and Manager",
-                "date": "Setembro 2022 - Setembro 2023"
-            },
-            "hestia": {
-                "title": "Full-stack Developer",
-                "date": "Julho 2021 - Julho 2022"
-            },
-            "isptec": {
-                "title": "Licenciatura em Engenharia",
-                "subtitle": "Engenharia Informática",
-                "date": "Março 2018 - Outubro 2023"
-            }
-        }
-    },
-    "techStack": {
-        "sectionTitle": "Tech Stack",
-        "sectionSubtitle": "Explore as tecnologias e ferramentas que impulsionam os meus projetos.",
-        "descriptions": {
-            "Framework": "Framework",
-            "Language": "Language",
-            "CSSLibrary": "CSS Library",
-            "Validator": "Validator",
-            "ORM": "ORM",
-            "GlobalState": "Global State",
-            "Library": "Library",
-            "Deployment": "Deployment",
-            "ServerState": "Server State",
-            "HeadlessCMS": "Headless CMS",
-            "Enviroment": "Environment"
-        }
-    },
-    "projects": {
-        "sectionTitle": "Projetos",
-        "sectionSubtitle": "Explore os meus projetos e contribuições, mostrando onde trabalhei e o impacto que tive.",
-        "messierNotes": {
-            "name": "Messier Notes",
-            "description": "Messier Notes é uma ferramenta de produtividade que oferece gestão de tarefas, apontamentos e colaboração numa plataforma integrada."
-        },
-        "kaleAcquisition": {
-            "name": "Kale-acquisition",
-            "description": "Trabalhei numa landing page para uma plataforma que ajuda empresas de recrutamento a eliminar a prospeção manual, otimizando o alcance através da automação."
-        },
-        "smoothPlayer": {
-            "name": "Smooth Player",
-            "description": "Smooth Player é um clone do Spotify com gestão de playlists, pesquisa de músicas e design responsivo para streaming de música sem falhas."
-        },
-        "venator": {
-            "name": "Venator",
-            "description": "Venator é uma caixa de entrada com IA integrada ao LinkedIn e Email, projetada para identificar e envolver potenciais clientes, simplificando a prospeção e o contacto."
-        },
-        "socialMate": {
-            "name": "Social Mate",
-            "description": "Social Mate é uma plataforma web criada para ajudar estudantes a partilhar informação, colaborar e comunicar de forma eficaz para obter melhores resultados."
-        }
-    },
-    "getInTouch": {
-        "title": "Vamos trabalhar!",
-        "subtitle": "Quer discutir uma oportunidade para criar algo incrível? Estou pronto quando quiser.",
-        "button": "Entre em contacto"
-    },
-    "footer": {
-        "thanks": "Obrigado pela visita!",
-        "copyright": "©2026 Kelman Dias dos Santos. Todos os direitos reservados.",
-        "links": "Links",
-        "elsewhere": "Social Media",
-        "about": "Sobre",
-        "timeline": "Timeline",
-        "techStack": "Tech Stack",
-        "getInTouch": "Contacto"
+  "nav": {
+    "about": "Sobre",
+    "timeline": "Timeline",
+    "projects": "Projetos",
+    "stack": "Tech Stack",
+    "contact": "Contacto",
+    "primary": "Principal",
+    "mobile": "Menu móvel",
+    "themeToDark": "Mudar para modo escuro",
+    "themeToLight": "Mudar para modo claro",
+    "switchLanguage": "Switch language to English",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "hero": {
+    "badge": "Full-stack Developer na TeamIt · Lisboa, PT",
+    "intro": "Sou o",
+    "description": "Um Dev Full-stack que adora transformar ideias em realidade. Tanto no front-end como no back-end, foco-me em soluções elegantes e funcionais — com paixão pela aprendizagem contínua e pela resolução criativa de problemas.",
+    "contact": "Entre em contacto",
+    "projects": "Ver projetos",
+    "facts": {
+      "years": {
+        "value": "5+",
+        "label": "anos de experiência profissional"
+      },
+      "companies": {
+        "value": "5",
+        "label": "empresas e equipas de produto"
+      },
+      "countries": {
+        "value": "3",
+        "label": "países · Portugal, Angola, EUA"
+      }
     }
+  },
+  "timeline": {
+    "title": "Timeline",
+    "subtitle": "Uma jornada pelos destaques da minha carreira, com marcos importantes, projetos e conquistas.",
+    "education": "Formação",
+    "items": {
+      "teamit": {
+        "date": "Abr 2025 — Presente",
+        "role": "Full-stack Developer",
+        "place": "Lisboa, PT"
+      },
+      "tsco": {
+        "date": "Set 2023 — Abr 2025",
+        "role": "Full-stack Developer",
+        "place": "Luanda, AO"
+      },
+      "horizon": {
+        "date": "Jan 2024 — Jun 2024",
+        "role": "Full-stack Developer",
+        "place": "Sheridan, WY, EUA"
+      },
+      "cbs": {
+        "date": "Set 2022 — Set 2023",
+        "role": "Software Developer & Manager",
+        "place": "Luanda, AO"
+      },
+      "hestia": {
+        "date": "Jul 2021 — Jul 2022",
+        "role": "Full-stack Developer",
+        "place": "Luanda, AO"
+      },
+      "isptec": {
+        "date": "Mar 2018 — Out 2023",
+        "role": "Licenciatura em Engenharia Informática",
+        "place": "Luanda, AO"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Explore os meus projetos e contribuições, mostrando onde trabalhei e o impacto que tive.",
+    "view": "Ver projeto",
+    "paradis": "com Paradis Labs",
+    "items": {
+      "genesis": {
+        "name": "Génesis Sport Club",
+        "description": "Site oficial do clube angolano de formação desportiva, bilingue, com notícias, modalidades e adesão de sócios."
+      },
+      "kitenda": {
+        "name": "Kitenda",
+        "description": "Calculadora de conversão de Kwanza para moeda estrangeira para carregamento de cartões, com taxas de câmbio actualizadas."
+      },
+      "fichaSegura": {
+        "name": "Ficha Segura",
+        "description": "Simulador que compara depósitos a prazo dos principais bancos de Angola."
+      },
+      "kale": {
+        "name": "Kale",
+        "description": "Landing page de um serviço gerido de cold email para empresas que vendem a PMEs."
+      },
+      "farwell": {
+        "name": "Farwell Angola",
+        "description": "Site institucional e portfólio da Farwell Angola."
+      }
+    }
+  },
+  "publicSector": {
+    "title": "Setor público",
+    "subtitle": "Sistemas e portais desenvolvidos para instituições governamentais. Alguns são públicos; outros são internos e de acesso restrito.",
+    "badge": "Detalhes disponíveis em entrevista",
+    "public": "Acesso público",
+    "restricted": "Acesso restrito",
+    "result": "Resultado"
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "subtitle": "As tecnologias com que trabalho no dia a dia.",
+    "groups": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "database": "Bases de dados",
+      "integrations": "Integrações",
+      "cms": "CMS",
+      "devops": "Cloud & DevOps"
+    }
+  },
+  "contact": {
+    "title": "Vamos trabalhar!",
+    "subtitle": "Quer discutir uma oportunidade para criar algo incrível? Estou pronto quando quiser.",
+    "schedule": "Agendar conversa",
+    "email": "Enviar email"
+  },
+  "footer": {
+    "thanks": "Obrigado pela visita!",
+    "tagline": "Kelman Santos · Full-stack Developer",
+    "links": "Links",
+    "social": "Social Media",
+    "copyright": "©2026 Kelman Dias dos Santos. Todos os direitos reservados."
+  }
 }
