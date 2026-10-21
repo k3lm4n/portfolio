@@ -61,20 +61,41 @@ export function Projects() {
   const { t } = useTranslation();
 
   return (
-    <Section id="projects" title={t("projects.title")} subtitle={t("projects.subtitle")} className="pb-28">
+    <Section id="projects" title={t("projects.title")} subtitle={t("projects.subtitle")} className="pt-18">
       <div className="grid grid-cols-6 gap-5 max-nav:grid-cols-1">
         {projects.map((project) => {
           const wide = project.span === 3;
           const name = t(`projects.items.${project.id}.name`);
+          const paradis = project.paradis && (
+            <span className="text-[13px] text-muted">{t("projects.paradis")}</span>
+          );
+          const roles = project.roles.map((role) => <Chip key={role}>{role}</Chip>);
+          const viewLink = project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm font-semibold"
+            >
+              {t("projects.view")}
+              <ArrowUpRight size={14} strokeWidth={2} aria-hidden="true" />
+            </a>
+          );
+
           return (
             <article
               key={project.id}
               className={cn(
-                "card reveal flex flex-col overflow-hidden rounded-[20px] border border-line bg-surface max-nav:col-span-1",
+                "card reveal flex flex-col overflow-hidden rounded-[22px] border border-line bg-surface max-nav:col-span-1",
                 wide ? "col-span-3" : "col-span-2",
               )}
             >
-              <div className="flex aspect-[16/10] items-center justify-center bg-thumb text-xs font-medium text-muted">
+              <div
+                className={cn(
+                  "flex items-center justify-center bg-thumb text-[13px] text-muted",
+                  wide ? "aspect-video" : "aspect-[16/10]",
+                )}
+              >
                 {project.image ? (
                   <img
                     src={project.image}
@@ -89,31 +110,33 @@ export function Projects() {
                   name
                 )}
               </div>
-              <div className={cn("flex grow flex-col gap-2.5", wide ? "p-6" : "p-[22px]")}>
-                <h3 className={cn("m-0 font-bold tracking-[-0.02em]", wide ? "text-[21px]" : "text-lg")}>
-                  {name}
-                </h3>
-                <div className="flex flex-wrap items-center gap-2">
-                  {project.roles.map((role) => (
-                    <Chip key={role}>{role}</Chip>
-                  ))}
-                  {project.paradis && <span className="text-[13px] text-muted">· {t("projects.paradis")}</span>}
+              {wide ? (
+                <div className="flex grow flex-col gap-3 px-[26px] pt-6 pb-[22px]">
+                  <div className="flex flex-wrap items-baseline justify-between gap-3">
+                    <h3 className="m-0 text-[21px] font-bold tracking-[-0.02em]">{name}</h3>
+                    {paradis}
+                  </div>
+                  <p className="m-0 text-[15px] leading-[1.6] text-muted">
+                    {t(`projects.items.${project.id}.description`)}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between gap-3 pt-1.5">
+                    <div className="flex flex-wrap gap-1.5">{roles}</div>
+                    {viewLink}
+                  </div>
                 </div>
-                <p className={cn("m-0 leading-[1.6] text-muted", wide ? "text-[15px]" : "text-sm")}>
-                  {t(`projects.items.${project.id}.description`)}
-                </p>
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex min-h-11 items-center gap-1.5 self-start text-sm font-semibold"
-                  >
-                    {t("projects.view")}
-                    <ArrowUpRight size={16} className="card-arrow" aria-hidden="true" />
-                  </a>
-                )}
-              </div>
+              ) : (
+                <div className="flex grow flex-col gap-2.5 px-6 pt-[22px] pb-[18px]">
+                  <h3 className="m-0 text-[19px] font-bold tracking-[-0.02em]">{name}</h3>
+                  <p className="m-0 text-sm leading-[1.6] text-muted">
+                    {t(`projects.items.${project.id}.description`)}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {roles}
+                    {paradis}
+                  </div>
+                  {viewLink && <div className="mt-auto">{viewLink}</div>}
+                </div>
+              )}
             </article>
           );
         })}
