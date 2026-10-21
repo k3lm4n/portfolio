@@ -51,6 +51,12 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  /* inline so --speed/--duration resolve on the element, not on :root */
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  --animate-slide: slide var(--speed) ease-in-out infinite alternate;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 }
 
 @theme {
@@ -65,11 +71,6 @@
   --color-light-red: rgba(233, 63, 64, 0.43);
   --color-light-yellow: rgba(255, 184, 0, 0.43);
   --color-primary-color: #f1f4fc;
-
-  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
-  --animate-slide: slide var(--speed) ease-in-out infinite alternate;
-  --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
   @keyframes spin-around {
     0% {
