@@ -10,7 +10,8 @@ export function ShimmerButton(props: PressableProps) {
       {...props}
       style={{ "--speed": "3s", "--spread": "90deg", "--cut": "1.5px", ...props.style } as CSSProperties}
       className={cn(
-        "group relative z-0 inline-flex h-[50px] cursor-pointer items-center justify-center overflow-hidden rounded-full border-0 bg-fg px-6 text-[15px] font-semibold whitespace-nowrap text-bg",
+        // clip-path: iOS Safari ignores overflow-hidden + radius for the blurred, rotating spark
+        "group relative isolate inline-flex h-[50px] cursor-pointer items-center justify-center overflow-hidden [clip-path:inset(0_round_9999px)] rounded-full border-0 bg-fg px-6 text-[15px] font-semibold whitespace-nowrap text-bg",
         "transition-transform duration-200 hover:-translate-y-px active:translate-y-px",
         props.className,
       )}

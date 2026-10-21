@@ -24,7 +24,7 @@ Os botões vêm do registo do Magic UI (`npx shadcn@latest add "https://magicui.
 - **Alternativas:** copiar o CSS do canvas como classes globais (`.shimmer`, `.ihb`, `.pulsing`), com fidelidade total mas sem componentes; registo completo com BlurFade (adiciona `motion` e um IntersectionObserver por elemento).
 - **Adaptação obrigatória** depois do `add`:
   - substituir cores fixas (`#ffffff`, `rgba(0,0,0)`, `bg-background`, `bg-primary`) pelos tokens `fg`, `bg`, `spark`, `pulse` e `line`;
-  - mover os keyframes que o CLI tenta pôr em `@theme` para o `src/index.css` (Tailwind v4, sem `tailwind.config`);
+  - os `@keyframes` dos componentes podem ir para o `@theme` do `src/index.css` (Tailwind v4, sem `tailwind.config`), mas as variáveis `--animate-*` que usam `var()` do próprio botão (`--speed`, `--duration`) SHALL ficar no `@theme inline`. Declaradas no `@theme` normal, resolvem-se no `:root`, onde essas variáveis não existem, e a animação fica `none` (corrigido pela change `fix-magic-ui-button-animations`);
   - aceitar `href` e renderizar `<a>` ou `<button>` (D2);
   - pôr `aria-hidden` na cópia animada do texto do Interactive Hover;
   - igualar as medidas do canvas (altura 50/52, pill, 15px).

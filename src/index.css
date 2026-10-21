@@ -78,17 +78,19 @@
   --color-ok-text: var(--ok-text);
   --color-lock-bg: var(--lock-bg);
   --color-lock-text: var(--lock-text);
-}
 
-@theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --breakpoint-nav: 900px;
-
+  /* Inline because --speed/--duration are set on the button itself:
+     declared on :root they would resolve there, undefined, and the animation would not run */
   /* Magic UI · Shimmer Button */
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
   /* Magic UI · Pulsating Button */
   --animate-pulsate: pulsate var(--duration) ease-out infinite;
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --breakpoint-nav: 900px;
 
   @keyframes shimmer-slide {
     to { transform: translate(calc(100cqw - 100%), 0); }
