@@ -60,7 +60,7 @@ export const publicSectorItems: PublicSectorItem[] = [
   },
   {
     id: "public-sector-2",
-    year: "2025",
+    year: "2026",
     access: "public",
     url: "https://dados.gov.pt",
     techs: [

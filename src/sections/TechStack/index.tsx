@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Chip } from "@/components/Chip";
 import { Section } from "@/components/Section";
 
 const groups = [
@@ -39,22 +38,25 @@ export function TechStack() {
       id="stack"
       title={t("stack.title")}
       subtitle={t("stack.subtitle")}
-      className="pb-28"
+      className="pt-28"
     >
-      <div className="grid grid-cols-4 gap-5 max-nav:grid-cols-2 max-[520px]:grid-cols-1">
+      <div className="border-t border-line">
         {groups.map((group) => (
           <div
             key={group.id}
-            className="card reveal flex flex-col gap-4 rounded-[18px] border border-line bg-surface p-6"
+            className="reveal grid grid-cols-[200px_minmax(0,1fr)] items-center gap-6 border-b border-line py-[22px] max-nav:grid-cols-1 max-nav:gap-3"
           >
-            <h3 className="m-0 text-xs font-medium tracking-[0.06em] text-muted uppercase">
+            <h3 className="m-0 text-[13px] font-semibold tracking-[0.06em] text-muted uppercase">
               {t(`stack.groups.${group.id}`)}
             </h3>
             <div className="flex flex-wrap gap-2">
               {group.techs.map((tech) => (
-                <Chip key={tech} size="md">
+                <span
+                  key={tech}
+                  className="rounded-full border border-line bg-surface px-3.5 py-[7px] text-sm font-medium"
+                >
                   {tech}
-                </Chip>
+                </span>
               ))}
             </div>
           </div>

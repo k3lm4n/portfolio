@@ -2,55 +2,59 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Design tokens (canvas "Portfólio Kelman Santos") */
+/* Design tokens (canvas "Portfólio Kelman Santos — V2") */
 :root {
-  --bg: #f2f4fa;
+  --bg: #f4f5fa;
   --surface: #ffffff;
-  --line: #e1e5ee;
+  --line: #e4e7ef;
   --fg: #0f172a;
   --muted: #556074;
-  --faint: #8a93a6;
+  --faint: #9aa2b4;
   --chip: #334155;
-  --chip-bg: #eef1f7;
-  --nav: rgba(255, 255, 255, 0.62);
-  --nav-line: rgba(255, 255, 255, 0.9);
-  --btn-bg: #0f172a;
-  --btn-text: #ffffff;
-  --btn2-bg: #e4e8f0;
-  --thumb: #e9edf5;
-  --cta-bg: #0f172a;
-  --cta-text: #f8fafc;
-  --cta-muted: #b4bdcc;
-  --cta-btn-bg: #ffffff;
-  --cta-btn-text: #0f172a;
+  --chip-bg: #f0f2f7;
+  --nav: rgba(255, 255, 255, 0.7);
+  --nav-line: rgba(255, 255, 255, 0.95);
+  --thumb: #edeff6;
+  --accent: #5b5bd6;
+  --spark: #ffffff;
+  --pulse: rgba(91, 91, 214, 0.35);
+  --ok-bg: #e7f6ee;
+  --ok-text: #17794d;
+  --lock-bg: #fff1e6;
+  --lock-text: #b4501a;
   --glow:
-    radial-gradient(42% 520px at 28% 0%, rgba(160, 166, 240, 0.55), transparent 75%),
-    radial-gradient(36% 480px at 58% 0%, rgba(246, 178, 160, 0.55), transparent 75%);
+    radial-gradient(640px 460px at 18% -6%, rgba(170, 172, 245, 0.55), transparent 70%),
+    radial-gradient(560px 420px at 62% -8%, rgba(248, 190, 170, 0.5), transparent 70%);
+  --cta-glow:
+    radial-gradient(480px 260px at 30% 0%, rgba(170, 172, 245, 0.35), transparent 70%),
+    radial-gradient(420px 240px at 75% 0%, rgba(248, 190, 170, 0.35), transparent 70%);
 }
 
 .dark {
-  --bg: #0b1020;
-  --surface: #121829;
-  --line: #222a3e;
-  --fg: #e8ecf5;
-  --muted: #9aa3b8;
-  --faint: #6b7489;
-  --chip: #c9d0de;
-  --chip-bg: #1a2236;
-  --nav: rgba(18, 24, 41, 0.62);
-  --nav-line: rgba(255, 255, 255, 0.08);
-  --btn-bg: #e8ecf5;
-  --btn-text: #0b1020;
-  --btn2-bg: #1c2438;
-  --thumb: #171e31;
-  --cta-bg: #e8ecf5;
-  --cta-text: #0b1020;
-  --cta-muted: #465066;
-  --cta-btn-bg: #0b1020;
-  --cta-btn-text: #e8ecf5;
+  --bg: #0b0f1a;
+  --surface: #121826;
+  --line: #222a3b;
+  --fg: #e9ecf4;
+  --muted: #9aa3b6;
+  --faint: #5e6779;
+  --chip: #c7cedb;
+  --chip-bg: #1a2132;
+  --nav: rgba(18, 24, 38, 0.7);
+  --nav-line: rgba(255, 255, 255, 0.06);
+  --thumb: #171e2d;
+  --accent: #a5a6ff;
+  --spark: #5b5bd6;
+  --pulse: rgba(165, 166, 255, 0.35);
+  --ok-bg: rgba(52, 211, 153, 0.12);
+  --ok-text: #6ee7b7;
+  --lock-bg: rgba(251, 146, 60, 0.12);
+  --lock-text: #fdba74;
   --glow:
-    radial-gradient(42% 520px at 28% 0%, rgba(99, 102, 241, 0.3), transparent 75%),
-    radial-gradient(36% 480px at 58% 0%, rgba(244, 140, 120, 0.22), transparent 75%);
+    radial-gradient(640px 460px at 18% -6%, rgba(99, 102, 241, 0.28), transparent 70%),
+    radial-gradient(560px 420px at 62% -8%, rgba(244, 140, 120, 0.18), transparent 70%);
+  --cta-glow:
+    radial-gradient(480px 260px at 30% 0%, rgba(99, 102, 241, 0.18), transparent 70%),
+    radial-gradient(420px 240px at 75% 0%, rgba(244, 140, 120, 0.12), transparent 70%);
 }
 
 @theme inline {
@@ -64,42 +68,64 @@
   --color-chip-bg: var(--chip-bg);
   --color-nav: var(--nav);
   --color-nav-line: var(--nav-line);
-  --color-btn-bg: var(--btn-bg);
-  --color-btn-text: var(--btn-text);
-  --color-btn2-bg: var(--btn2-bg);
+  --color-btn-bg: var(--fg);
+  --color-btn-text: var(--bg);
   --color-thumb: var(--thumb);
-  --color-cta-bg: var(--cta-bg);
-  --color-cta-text: var(--cta-text);
-  --color-cta-muted: var(--cta-muted);
-  --color-cta-btn-bg: var(--cta-btn-bg);
-  --color-cta-btn-text: var(--cta-btn-text);
+  --color-accent: var(--accent);
+  --color-spark: var(--spark);
+  --color-pulse: var(--pulse);
+  --color-ok-bg: var(--ok-bg);
+  --color-ok-text: var(--ok-text);
+  --color-lock-bg: var(--lock-bg);
+  --color-lock-text: var(--lock-text);
 }
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --breakpoint-nav: 900px;
+
+  /* Magic UI · Shimmer Button */
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  /* Magic UI · Pulsating Button */
+  --animate-pulsate: pulsate var(--duration) ease-out infinite;
+
+  @keyframes shimmer-slide {
+    to { transform: translate(calc(100cqw - 100%), 0); }
+  }
+  @keyframes spin-around {
+    0% { transform: translateZ(0) rotate(0); }
+    15%, 35% { transform: translateZ(0) rotate(90deg); }
+    65%, 85% { transform: translateZ(0) rotate(270deg); }
+    100% { transform: translateZ(0) rotate(360deg); }
+  }
+  @keyframes pulsate {
+    0% { box-shadow: 0 0 0 0 var(--pulse); }
+    50% { box-shadow: 0 0 0 var(--distance) var(--pulse); }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
 }
 
+/* Magic UI · Blur Fade, in CSS */
 @keyframes rise {
-  from { opacity: 0; translate: 0 24px; filter: blur(6px); }
+  from { opacity: 0; translate: 0 6px; filter: blur(6px); }
+  to { opacity: 1; translate: 0 0; filter: blur(0); }
+}
+@keyframes reveal {
+  from { opacity: 0; translate: 0 12px; filter: blur(6px); }
   to { opacity: 1; translate: 0 0; filter: blur(0); }
 }
 @keyframes drop {
   from { opacity: 0; translate: 0 -16px; }
   to { opacity: 1; translate: 0 0; }
 }
-@keyframes reveal {
-  from { opacity: 0; translate: 0 40px; scale: 0.98; }
-  to { opacity: 1; translate: 0 0; scale: 1; }
+@keyframes ping {
+  0% { box-shadow: 0 0 0 0 rgba(34, 160, 107, 0.5); }
+  80%, 100% { box-shadow: 0 0 0 8px rgba(34, 160, 107, 0); }
 }
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(34, 160, 107, 0.55); }
-  70% { box-shadow: 0 0 0 9px rgba(34, 160, 107, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(34, 160, 107, 0); }
-}
-@keyframes glow {
+@keyframes drift {
   0% { background-position: 0 0, 0 0; }
-  100% { background-position: 60px 30px, -50px 20px; }
+  100% { background-position: 50px 20px, -40px 10px; }
 }
 @keyframes menu {
   from { opacity: 0; translate: 0 -8px; scale: 0.98; }
@@ -130,17 +156,7 @@
   a {
     color: inherit;
     text-decoration: none;
-    transition: opacity 0.15s;
-  }
-  a:hover {
-    opacity: 0.72;
-  }
-
-  button {
-    transition: transform 0.2s ease, opacity 0.2s;
-  }
-  button:active {
-    transform: scale(0.94);
+    transition: opacity 0.2s;
   }
 
   :focus-visible {
@@ -153,8 +169,13 @@
   .page-glow {
     background-image: var(--glow);
     background-repeat: no-repeat;
-    animation: glow 16s ease-in-out infinite alternate;
+    animation: drift 18s ease-in-out infinite alternate;
     transition: background-color 0.3s, color 0.3s;
+  }
+
+  .cta-glow {
+    background-image: var(--cta-glow);
+    background-repeat: no-repeat;
   }
 
   .header-drop {
@@ -162,85 +183,42 @@
   }
 
   .hero-in > * {
-    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: rise 0.5s ease-out both;
   }
-  .hero-in > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-in > *:nth-child(2) { animation-delay: 0.2s; }
-  .hero-in > *:nth-child(3) { animation-delay: 0.32s; }
-  .hero-in > *:nth-child(4) { animation-delay: 0.44s; }
+  .hero-in > *:nth-child(1) { animation-delay: 0.04s; }
+  .hero-in > *:nth-child(2) { animation-delay: 0.12s; }
+  .hero-in > *:nth-child(3) { animation-delay: 0.2s; }
+  .hero-in > *:nth-child(4) { animation-delay: 0.28s; }
 
-  .pulse-dot {
-    animation: pulse-ring 2s ease-out infinite;
+  .ping {
+    animation: ping 2s ease-out infinite;
   }
 
   .menu-in {
     animation: menu 0.22s ease-out both;
   }
 
-  .nav-link {
-    position: relative;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 2px;
-    border-radius: 2px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s ease;
-  }
-  .nav-link:hover {
-    opacity: 1;
-  }
-  .nav-link:hover::after {
-    transform: scaleX(1);
-  }
-
-  .btn {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
-  }
-  .btn:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(15, 23, 41, 0.18);
-  }
-  .btn svg {
-    transition: transform 0.2s ease;
-  }
-  .btn:hover svg {
-    transform: translateX(3px);
-  }
-
   .card {
-    transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s;
   }
   .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(15, 23, 41, 0.12);
-  }
-  .card .card-arrow {
-    transition: transform 0.2s ease;
-  }
-  .card:hover .card-arrow {
-    transform: translate(2px, -2px);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   }
 
-  .xp-row {
-    transition: padding-left 0.3s ease;
+  /* "Ver projeto" links: the arrow moves up and right on hover */
+  .more svg {
+    transition: transform 0.2s;
   }
-  .xp-row:hover {
-    padding-left: 8px;
+  .more:hover svg {
+    transform: translate(2px, -2px);
   }
 
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal linear both;
       animation-timeline: view();
-      animation-range: entry 0% cover 22%;
+      animation-range: entry 0% cover 20%;
     }
   }
 }

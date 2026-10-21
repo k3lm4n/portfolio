@@ -18,18 +18,18 @@ export function Footer() {
           <nav aria-label={t("footer.links")} className="flex flex-col gap-2.5 text-sm">
             <span className="font-semibold">{t("footer.links")}</span>
             {footerLinks.map((link) => (
-              <a key={link.id} href={`#${link.id}`} className="text-muted">
+              <a key={link.id} href={`#${link.id}`} className="text-muted hover:opacity-60">
                 {t(link.label)}
               </a>
             ))}
           </nav>
           <nav aria-label={t("footer.social")} className="flex flex-col gap-2.5 text-sm">
             <span className="font-semibold">{t("footer.social")}</span>
-            <a href={`mailto:${EMAIL}`} className="text-muted">
+            <a href={`mailto:${EMAIL}`} className="text-muted hover:opacity-60">
               Email
             </a>
             {socialLinks.map(({ label, href }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-muted">
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-muted hover:opacity-60">
                 {label}
               </a>
             ))}

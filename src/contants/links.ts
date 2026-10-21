@@ -1,6 +1,5 @@
 import { ComponentType } from "react";
-import { MessageCircle } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { DiscordIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
 
 export const EMAIL = "kelmandossantos@gmail.com";
 
@@ -28,5 +27,5 @@ export const socialLinks: SocialLink[] = [
     href: "https://www.linkedin.com/in/kelman-dias-dos-santos-812693185/",
     Icon: LinkedInIcon,
   },
-  { label: "Discord", href: "https://discord.com/users/826107786643243038", Icon: MessageCircle },
+  { label: "Discord", href: "https://discord.com/users/826107786643243038", Icon: DiscordIcon },
 ];

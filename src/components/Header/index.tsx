@@ -6,7 +6,7 @@ import { sectionLinks, socialLinks } from "@/contants/links";
 import { wrap } from "@/lib/utils";
 
 const iconButton =
-  "inline-flex size-11 cursor-pointer items-center justify-center rounded-[10px] border-0";
+  "inline-flex size-11 cursor-pointer items-center justify-center rounded-xl border-0";
 
 export function Header() {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -30,25 +30,25 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="header-drop sticky top-4 z-10 pt-4">
+    <header className="header-drop sticky top-0 z-10 pt-4">
       <div className={wrap}>
-        <div className="flex min-h-14 items-center justify-between gap-4 rounded-2xl border border-nav-line bg-nav py-1.5 pr-2 pl-5 shadow-[0_8px_30px_rgba(15,23,41,0.06)] backdrop-blur-[16px]">
+        <div className="flex min-h-14 items-center justify-between gap-4 rounded-[18px] border border-nav-line bg-nav py-1.5 pr-2 pl-[22px] backdrop-blur-[16px]">
           <a
             href="#about"
-            className="hidden min-h-11 items-center text-base font-bold tracking-[-0.01em] max-nav:inline-flex"
+            className="inline-flex min-h-11 items-center text-base font-bold tracking-[-0.01em]"
           >
-            Kelman Santos
+            Kelman<span className="text-accent">.</span>
           </a>
-          <nav aria-label={t("nav.primary")} className="flex gap-6 text-[15px] max-nav:hidden">
+          <nav aria-label={t("nav.primary")} className="flex gap-[26px] text-sm text-muted max-nav:hidden">
             {sectionLinks.map((link) => (
-              <a key={link.id} href={`#${link.id}`} className="nav-link">
+              <a key={link.id} href={`#${link.id}`} className="hover:opacity-60">
                 {t(link.label)}
               </a>
             ))}
           </nav>
 
-          <div className="ml-auto flex items-center gap-1">
-            <div className="flex items-center gap-1 max-nav:hidden">
+          <div className="flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 max-nav:hidden">
               {socialLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -56,12 +56,12 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="inline-flex size-11 items-center justify-center rounded-[10px]"
+                  className="inline-flex size-11 items-center justify-center rounded-xl hover:opacity-60"
                 >
-                  <Icon size={20} strokeWidth={1.8} />
+                  <Icon size={19} strokeWidth={1.7} />
                 </a>
               ))}
-              <span aria-hidden="true" className="mx-1.5 h-6 w-px bg-line" />
+              <span aria-hidden="true" className="mx-1.5 h-[22px] w-px bg-line" />
             </div>
 
             <button
@@ -105,7 +105,7 @@ export function Header() {
         {menuOpen && (
           <div
             id="mobile-menu"
-            className="menu-in mt-2 flex flex-col gap-1 rounded-2xl border border-line bg-surface p-3 shadow-[0_16px_40px_rgba(15,23,41,0.12)] nav:hidden"
+            className="menu-in mt-2 flex flex-col gap-1 rounded-[18px] border border-line bg-surface p-2 nav:hidden"
           >
             <nav aria-label={t("nav.mobile")} className="flex flex-col">
               {sectionLinks.map((link) => (
@@ -113,7 +113,7 @@ export function Header() {
                   key={link.id}
                   href={`#${link.id}`}
                   onClick={closeMenu}
-                  className="flex min-h-12 items-center rounded-[10px] px-3 text-[17px] font-medium"
+                  className="flex min-h-[50px] items-center rounded-xl px-3.5 text-[17px] font-medium"
                 >
                   {t(link.label)}
                 </a>
@@ -127,7 +127,7 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="inline-flex size-11 items-center justify-center rounded-[10px] bg-chip-bg"
+                  className="inline-flex size-11 items-center justify-center rounded-xl bg-chip-bg"
                 >
                   <Icon size={20} strokeWidth={1.8} />
                 </a>
