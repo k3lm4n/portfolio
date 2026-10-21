@@ -152,7 +152,7 @@ function Experience() {
                       {t(item.title as any)}
                     </span>
                     <div className="flex flex-col gap-4">
-                      <p className="vertical-timeline-element-subtitle !font-light !text-sm !-mt-1 ">
+                      <p className="vertical-timeline-element-subtitle font-light! text-sm! -mt-1! ">
                         {item.subtitle} &mdash; {item.location}
                       </p>
                     </div>
