@@ -18,7 +18,7 @@ const groups = [
   },
   {
     id: "database",
-    techs: ["PostgreSQL", "PL/pgSQL", "MongoDB", "Elasticsearch"],
+    techs: ["PostgreSQL", "PL/SQL (Oracle)", "MongoDB", "Elasticsearch"],
   },
   {
     id: "cms",
