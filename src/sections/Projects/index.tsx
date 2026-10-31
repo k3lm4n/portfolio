@@ -8,6 +8,7 @@ import genesisImg from "@/assets/projects/genesis.webp";
 import kitendaImg from "@/assets/projects/kitenda.webp";
 import fichaSeguraImg from "@/assets/projects/fichaSegura.webp";
 import kaleImg from "@/assets/projects/kale.webp";
+import farwellImg from "@/assets/projects/farwell.webp";
 
 type Project = {
   id: "genesis" | "kitenda" | "fichaSegura" | "kale" | "farwell";
@@ -53,8 +54,13 @@ const projects: Project[] = [
     image: kaleImg,
     url: "https://www.kaleacquisition.com/",
   },
-  // Site is down; add image and url (https://farwell.co.ao/) once it is back
-  { id: "farwell", span: 2, roles: ["CMS", "DevOps"] },
+  {
+    id: "farwell",
+    span: 2,
+    roles: ["CMS", "DevOps"],
+    image: farwellImg,
+    url: "https://farwell.co.ao/",
+  },
 ];
 
 export function Projects() {
